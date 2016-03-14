@@ -1,0 +1,31 @@
+---
+layout: post
+title: Azure Web Sites DaaS–Diagnostics as a Service
+date: 2014-12-02 16:11:52.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Administration
+- Azure
+- Development
+- DevOps
+tags: []
+meta:
+  dsq_thread_id: '3283434864'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457913445;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:691;}i:1;a:1:{s:2:"id";i:248;}i:2;a:1:{s:2:"id";i:261;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://adminian.com/wp-content/uploads/2014/12/image.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb.png" width="507" height="171" /></a></p>
+<p>&nbsp;</p>
+<p>DaaS for Azure Web Sites is a great tool when “bad things happen to a good site”! It allows you to collect a plethora of different logs and parses them into an easily digestible format. The idea is to enable you to get to root cause without turning to the forums or Microsoft support. I’m running a WordPress site that, knock on digital wood, is pretty rock solid. Even so, I’m going to use this site to play around.</p>
+<p>Until the recent <a href="http://azure.microsoft.com/blog/2014/12/01/new-updates-to-daas-diagnostics-as-a-service-for-azure-websites/" target="_blank">announcement</a>, the collection and parsing of PHP logs wasn’t an option, but now DaaS will collect PHP specific files along with Event Logs, Memory Dumps and HTTP Logs. First you will need to enable <strong>Web Server Logging</strong> to the <strong>File System</strong>. With that down just browse over to <a href="https://%3cyoursitename%3e.scm.azurewebsites.net/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/DaaS</b></a> and you’ll get a page like this…</p>
+<p><a href="http://adminian.com/wp-content/uploads/2014/12/image1.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="{{ site.baseurl }}/assets/image_thumb1.png" width="534" height="258" /></a></p>
+<p>&nbsp;</p>
+<p>All you need to do is click <strong>Diagnose Now</strong> and your off to the races. Oh, and you can also schedule an analysis if you’d like…</p>
+<p>Once that is complete you can download your logs at: <a href="https://&lt;YourSiteName&gt;.scm.azurewebsites.net/Zip/data/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/Zip/</b>data/<b>DaaS</b></a>. </p>

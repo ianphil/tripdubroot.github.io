@@ -1,0 +1,35 @@
+---
+layout: post
+title: The Case of Azure Websites and Continuous Deployment
+date: 2015-03-03 02:31:38.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+- Development
+- DevOps
+tags: []
+meta:
+  _edit_last: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457638086;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1461;}i:1;a:1:{s:2:"id";i:2058;}i:2;a:1:{s:2:"id";i:248;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://adminian.com/wp-content/uploads/2015/03/deployment2.png"><img class="alignnone size-medium wp-image-991" src="{{ site.baseurl }}/assets/deployment2-300x137.png" alt="deployment2" width="300" height="137" /></a></p>
+<p>TL;DR: Build a site to do wireless surveys: <a href="https://wlansurvey.azurewebsites.net/">https://wlansurvey.azurewebsites.net/</a></p>
+<p>So this post has a misleading title... Because I'm not going to explain how this works, Azure Websites continuous deployment is not anything really new, and also It's well documented <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/" target="_blank">here</a> and <a href="http://www.hanselman.com/blog/MovingAWebsiteToAzureWhileAddingContinuousDeploymentFromGit.aspx" target="_blank">here</a>.</p>
+<p>Anyhow, the family and I recently moved into a new house. Our ISP was out today, running cables and getting things setup. Since I didn't really know how well my wireless router was going to cover the house, I asked Nick the fella working on getting me back online, if he had the ability to do a wireless survey of my house.</p>
+<p>Nick said, "Well they give us this <em>Airport Utillity</em> app on our phone. I can tell you what the db levels are, but I'm not really sure what they mean".</p>
+<p>Problem: This person should be able to tell me what my signal quality is, room by room.</p>
+<p>Solution: Five minutes googling with bing lead me to a <a href="http://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm" target="_blank">Stack Overflow post</a> that sounded smart enough and even had math explaining how to go from dBm to Quality percentage. <strong>Time to deploy something to Azure.</strong></p>
+<p>Enter Azure Websites Continuous Deployment. While he finished up the house, I started writing some quick code, pushed to GitHub, and setup my website in Azure to deploy from... you guessed it GitHub.</p>
+<p>At this point you maybe asking: "Pray tell, how did you deploy to Azure with no internet connectivity?".</p>
+<p>To that I say: "With my Verizon Jetpack, of course".</p>
+<p>By the time he was finished, I'd installed the <em>Airport Utility</em> app on my iPhone. Ran around the house gathering the dBm metrics for each room, and plugged them into: <a href="http://wlansurvey.azurewebsites.net" target="_blank">http://wlansurvey.azurewebsites.net</a>.</p>
+<p>He was a little shocked, but took down the web address and said he was going to tell all the guys at the office.</p>
+<p>Awesome! Hope you all had a great weekend... I spent mine moving.</p>

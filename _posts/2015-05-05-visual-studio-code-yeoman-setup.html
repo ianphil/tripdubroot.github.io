@@ -1,0 +1,48 @@
+---
+layout: post
+title: 'Visual Studio Code: Yeoman Setup'
+date: 2015-05-05 12:35:30.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- Development
+tags:
+- AngularJs
+- Visual Studio Code
+- Yeoman
+meta:
+  _edit_last: '1'
+  _oembed_127d97fc049aa79a375c045eb762c980: '{{unknown}}'
+  _oembed_d707b850ad4b607e8aa818a2e5b75e83: '{{unknown}}'
+  _oembed_81dc98a9b19aeb8d3caba48555573bc3: '{{unknown}}'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457871781;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1491;}i:1;a:1:{s:2:"id";i:2058;}i:2;a:1:{s:2:"id";i:2135;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p>I'm a huge fan of Sublime Text (and a paying customer), so when I heard we'd released a light weight code editor called <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, I had to go see...</p>
+<p>I was happy to see that it is trully light weight, shares some of the Sublime Text layout features, and is cross platform. Awesome... After downloading and installing it, I have to say I was a little lost. This is because I was thinking Visual Studio and not Sublime Text. Once I made that leap and realized there is no file -&gt; New Project I went to work. Here is what I did...</p>
+<p>First I noticed on the "Start" screen there is an instruction that states "If you don't have an existing project, we suggest using <a href="http://yeoman.io/" target="_blank">Yeoman </a>to scaffold out a new one.".</p>
+<p>[caption id="" align="aligncenter" width="878"]<a href="https://adminian.blob.core.windows.net/blog/VSCode-Yeoman.PNG"><img class="" src="{{ site.baseurl }}/assets/VSCode-Yeoman.PNG" alt="vscode" width="878" height="663" /></a> VSCode... use Yeoman[/caption]</p>
+<p>Ok, so let's do that. I already had node installed so I just walked through verifying I had the latest and greatest node/npm bits using:</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">node </span><span class="pun">--</span><span class="pln">version </span><span class="o"><span class="pun">&amp;&amp;</span></span><span class="pln"> npm </span><span class="pun">--</span><span class="pln">version</span></code></pre>
+<p>This shows that I am in fact running better than:</p>
+<ul>
+<li>Node.js v0.10.x+</li>
+<li>npm v2.1.0+</li>
+</ul>
+<p>From there let's get the Yeoman tool-set installed globally.</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">npm install </span><span class="pun">--</span><span class="pln">global yo bower grunt</span><span class="pun">-</span><span class="pln">cli</span></code></pre>
+<p>Once I've installed the tool set, I wanted a generator to scaffold out the project so I don't have too.</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">npm install </span><span class="pun">--</span><span class="pln">global generator</span><span class="pun">-</span><span class="pln">angular@0</span><span class="pun">.</span><span class="lit">11.1</span></code></pre>
+<p>Now! I have all the necessary tools to actually lay down some starter bits and get coding. Since I'm using the Yeoman tutorial as the basis to get my project going and I like Angular we'll scaffold out an Angular starter project.</p>
+<pre><code class="language-sh prettyprint"><span class="pln">yo angular</span></code></pre>
+<p>I'm not ready to use Sass right now so I will say no to that and accept the defaults from there.</p>
+<p>[caption id="" align="aligncenter" width="1091"]<a href="https://adminian.blob.core.windows.net/blog/AngularScoff.PNG"><img class="" src="{{ site.baseurl }}/assets/AngularScoff.PNG" alt="angular gen" width="1091" height="896" /></a> Angular Gen Output[/caption]</p>
+<p>Awesome! Now I have an Angular Web project ready to go. Let's open it in VSCode and start work. File -&gt; Open Folder aaaannnd...</p>
+<p>[caption id="" align="aligncenter" width="1044"]<a href="https://adminian.blob.core.windows.net/blog/VSCodeOpenFolder.PNG"><img class="" src="{{ site.baseurl }}/assets/VSCodeOpenFolder.PNG" alt="OpenFolder" width="1044" height="789" /></a> Ready to work![/caption]</p>
+<p>Next post we'll do some work in VSCode... till then.</p>

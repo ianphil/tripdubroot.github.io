@@ -1,0 +1,45 @@
+---
+layout: post
+title: Windows Azure, Remote PowerShell and the Case of the Unknown Certificate Authority
+date: 2013-04-30 05:00:00.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- Administration
+- Azure
+- DevOps
+- PowerShell
+- Windows Server
+tags:
+- Errors
+- Remote PowerShell
+- Windows Azure
+meta:
+  _publicize_pending: '1'
+  dsq_thread_id: '1387336527'
+  _edit_last: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457898078;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:248;}i:1;a:1:{s:2:"id";i:691;}i:2;a:1:{s:2:"id";i:1181;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://adminian.files.wordpress.com/2013/04/image_494c640a1.png"><img style="display:inline;border-width:0;" title="image_494C640A[1]" alt="image_494C640A[1]" src="{{ site.baseurl }}/assets/image_494c640a1_thumb.png" width="622" height="447" border="0" /></a></p>
+<p>Recently the folks over on the Azure team released a bunch of improvements to Azure. One of them caught my eye. They’ve provided us a way to enable PowerShell remoting when provisioning a machine. As someone who tries to automate all things I was extremely happy to see this. Gone are the days or creating images with startup scripts set, but there is a problem…</p>
+<p>After you provision a machine with the above check box checked. You’ll probably try something like this…</p>
+<p><script src="https://gist.github.com/devdash/bc3829b74941f405a802.js"></script></p>
+<p>And then you’ll see the following exception:</p>
+<blockquote><p>Enter-PSSession : Connecting to remote server psremoter.cloudapp.net failed with the following error message : The server certificate on the destination computer<br />
+(psremoter.cloudapp.net:5074) has the following errors:<br />
+The SSL certificate is signed by an unknown certificate authority. For more information, see the about_Remote_Troubleshooting Help topic.<br />
+At line:11 char:1<br />
++ Enter-PSSession -ComputerName psremoter.cloudapp.net -Port 5074 -Credential $cre ...<br />
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
++ CategoryInfo          : InvalidArgument: (psremoter.cloudapp.net:String) [Enter-PSSession], PSRemotingTransportException<br />
++ FullyQualifiedErrorId : CreateRemoteRunspaceFailed</p></blockquote>
+<p>Let’s take a step back and look at what I’m talking about. When you enable this feature, PSRemoting is configured for SSL and uses a self signed certificate. This certificate needs to be added to your root certificate store so that you can access the machine. Let’s do this…</p>
+<p><script src="https://gist.github.com/devdash/eae238a59988f1bf873e.js"></script></p>
+<p>This script creates a ServicePoint to get the certificate. Then adds it to your trusted store. Now your free to “Enter-PSSesion” or “Invoke-Command” all you’d like!</p>

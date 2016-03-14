@@ -1,0 +1,25 @@
+---
+layout: post
+title: Windows Azure SDK for .Net Management API (Preview)
+date: 2014-03-06 16:22:40.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+tags: []
+meta:
+  dsq_thread_id: '2373006072'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457711988;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:248;}i:1;a:1:{s:2:"id";i:2045;}i:2;a:1:{s:2:"id";i:1491;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="https://github.com/WindowsAzure/azure-sdk-for-net"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="{{ site.baseurl }}/assets/image.png" width="240" height="43" /></a></p>
+<p>Up until recently, we’ve had to use the REST API to work with Management objects in Windows Azure. This is great as all the overhead is stripped away, and anything can access it. However a .Net developer has a little extra work around generating the URLs, Authentication, and making requests. The new Management API included in the .Net SDK is a welcome enhancement.&nbsp; It’s still in preview, and sometimes doesn’t work as expected… Here’s a little code to get you started.</p>
+<p>Via Nuget: <code>Install-Package Microsoft.WindowsAzure.Management.Libraries -IncludePrerelease</code></p>
+<p><script src="https://gist.github.com/adminian/9393130.js"></script>
+<p>Ref: <a href="https://github.com/WindowsAzure/azure-sdk-for-net#windows-azure-management-libraries" target="_blank">Windows Azure Management Libraries</a></p>

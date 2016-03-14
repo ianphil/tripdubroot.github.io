@@ -1,0 +1,27 @@
+---
+layout: post
+title: AutoHotkey Where Have You Been All My Life?
+date: 2014-02-11 23:44:14.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Productivity
+tags: []
+meta:
+  dsq_thread_id: '2254318476'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457770523;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1111;}i:1;a:1:{s:2:"id";i:2135;}i:2;a:1:{s:2:"id";i:2058;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><img src="{{ site.baseurl }}/assets/ahk_logo.png" /></p>
+<p>&nbsp;</p>
+<p>Maybe I'm just late to the party, but this tool is just awesome! Install it! Run it, and say yes to let it create the default script. AutoHotKey has it’s own “language” and I use that term loosely. Here are a couple of helpful thing to note that should get you started. The semicolon is a comment:</p>
+<p><code>; Basic modifier symbols: </code><br /><code>; # Windows key </code><br /><code>; ! Alt key </code><br /><code>; ^ Control key </code><br /><code>; + Shift key </code><br /><code></code>&nbsp;<br /><code>^!+b::Run www.bing.com </code>
+<p>This above command will launch the default browser and navigate to Bing when you press: ctrl + alt + shift + b. I don’t think that some of these long hotkeys seem that useful and frankly I will not remember them. There are however times, when, say I’m having to modify text by pressing down, over, over, over, backspace, backspace rinse and repeat. You know what I’m talking about… This is where AutoHotkey comes to the rescue. To do just that you would:</p>
+<p><code>^#!f:: </code><br /><code>Down</code><br /><code>Left</code><br /><code>Left</code><br /><code>Left</code><br /><code>Backspace</code><br /><code>Backspace</code><br /><code>Return</code>
+<p>You can even loop and other constructs… just awesome! Go forth and do.</p>

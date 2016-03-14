@@ -1,0 +1,50 @@
+---
+layout: post
+title: The Azure Rest API, or Rather Resource Management API
+date: 2015-11-03 10:00:22.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+tags:
+- API
+- ARM
+- ASM
+- Azure
+- Resource Manager
+- REST
+meta:
+  _edit_last: '1'
+  _oembed_07a7f30db67b002c6429b7b5b87d49b1: '{{unknown}}'
+  _oembed_e4db24ac00a281bdac89273db04f8d4a: '{{unknown}}'
+  _oembed_26a9c049224a13ef3d55dcc9c622657c: '{{unknown}}'
+  _oembed_09d8237cd9221bc4cd0408b0fe890d83: '{{unknown}}'
+  _oembed_45abc78052c7b9adb29d8ae71a510c8d: '{{unknown}}'
+  _oembed_43e127be21552ce6c4be960f78e4ec94: '{{unknown}}'
+  _oembed_f585114b4a2af2f5f5282a87984fce78: '{{unknown}}'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457894760;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1491;}i:1;a:1:{s:2:"id";i:691;}i:2;a:1:{s:2:"id";i:2045;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p>Let's start with a simple bingle search. Head over to <a href="https://duckduckgo.com/">duckduckgo.com</a> and type in "Azure REST API" and hit quack...</p>
+<p><img class="alignnone" src="{{ site.baseurl }}/assets/search.png" alt="" width="781" height="427" /></p>
+<p>The top hit is already leading you astray! It takes us to the Azure Service Management API (ASM). "Ian, why is that not right?", you ask? Well to be fair it's not wrong... but wait we want Azure Resource Manager (ARM). It's the latest hotness.</p>
+<p>Let me take a step back here to say, I fall off of mountain bikes regularly, it's my excuse.</p>
+<p><img class="alignnone" src="{{ site.baseurl }}/assets/scott-scale-29er-2010-mountain-bike.jpg" alt="" width="600" height="356" /></p>
+<p>Dear Katniss Everdeen...</p>
+<p>uhh, back to Azure.</p>
+<p>ASM is like?.. Well my 2009 Pathfinder. It's trusty, and gets me to and fro, but doesn't have all the latest bells and whistles (Bluetooth!!!).  ARM is like?.. I want to say a Tesla, but that may be a little much. A NEW PATHFINDER! ha that would probably have Bluetooth.</p>
+<p>ARM is where you should be focusing. Instead of crafting an ASM based URL with a POST method that looks something like:</p>
+<blockquote><p>https://management.core.windows.net//services/hostedservices//deployments</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx">ref</a></p>
+<p>With a body full of XML &lt;digital shiver /&gt;. The 90's called wanting their code back... You should instead, create an ARM PUT that looks something like:</p>
+<blockquote><p>https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?validating={true|false}&amp;api-version={api-version}</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/mt163591.aspx">ref</a></p>
+<p>With a body full of Crockford approved, JSON.</p>
+<p>Now, there are plenty of tools to help you craft this JSON, so don't fret much. Check out this (shameless plug) awesome <a href="https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros">video </a>about how to use Visual Studio to do just that.</p>
+<p>Trust me, I'm a <a href="http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg">professional</a>.</p>

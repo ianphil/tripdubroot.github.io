@@ -1,0 +1,35 @@
+---
+layout: post
+title: Troubleshooting Azure Resource Manager Failed Messages
+date: 2015-05-29 15:15:19.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+- PowerShell
+tags:
+- Azure
+- PowerShell
+- Resource Manager
+meta:
+  _edit_last: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457886717;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:248;}i:1;a:1:{s:2:"id";i:261;}i:2;a:1:{s:2:"id";i:1491;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://devian.co/wp-content/uploads/2015/05/brokenComp.jpg"><img class="alignnone size-medium wp-image-1191" src="{{ site.baseurl }}/assets/brokenComp-300x218.jpg" alt="brokenComp" width="300" height="218" /></a></p>
+<p>So you're in the new portal and trying to deploy something? It runs for a while and then fails! The message returned isn't great and looks something like:</p>
+<blockquote><p>The operation name is: Microsoft.ClassicCompute/virtualMachines/extensions/write The status is: Failed</p></blockquote>
+<p>Well, it happens... A good way to start to troubleshoot that is using PowerShell. <a href="http://ianp.co/1PSAclL" target="_blank">Go setup PowerShell</a> if you haven't already. Then use the command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt;</pre>
+<p>This will return all the log entries from the last deployment. It should provide you a window into what is actually happening. Last I used this was deploying an Azure SQL database. The error I received was lacking detail, but after I ran that command I was able to see that East US was running hot and I need to provision in a different Datacenter...</p>
+<p>There are other variations of that command as well. If you want a specific deployment that you've run for a resource group you would use this command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -DeploymentName &lt;DeploymentName&gt;</pre>
+<p>If you want all the logs for a resource group you would run:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -All</pre>
+<p>Hope this helps you figure out what's happening with a Resource Manager based deployment goes wrong!</p>

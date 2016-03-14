@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'PowerDNSimple: A PowerShell module for DNSimple.com REST API'
+date: 2013-04-01 15:29:37.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- DevOps
+- PowerShell
+tags: []
+meta:
+  _publicize_pending: '1'
+  dsq_thread_id: '1406510573'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457922969;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:248;}i:1;a:1:{s:2:"id";i:2045;}i:2;a:1:{s:2:"id";i:691;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://adminian.files.wordpress.com/2013/04/dnsimple.png"><img title="dnsimple" style="display:inline;border-width:0;" border="0" alt="dnsimple" src="{{ site.baseurl }}/assets/dnsimple_thumb.png" width="640" height="373" /></a>&nbsp;</p>
+<p>This journey started when I was building a test lab on Windows Azure. The goal was to run two SharePoint instances, one SharePoint 2010 farm and one SharePoint 2013 farm. In keeping with automating this network setup and build… I wanted a good way to lookup my VM’s VIP assigned by Azure and update an A record on DNSimple. It turns out a simple DNS Alias record is really what I needed, but never the less I’ve had a bit of fun and learned a few things along the way.</p>
+<p>I’ll come back to working with Azure in a later post, for now let’s focus on DNSimple…</p>
+<p>DNSimple.com offers a great service! I first heard about them from <a href="http://www.hanselman.com/blog/" target="_blank">Scott Hanselman</a>. I’ve not been disappointed. Not only do they have a robust API, but also 1 click DNS configuration for many popular services (I won’t hold it against them if they don’t have a Office365 configuration yet). </p>
+<p>My scripting language of choice is PowerShell. Naturally I turned there first to start automating. Out of this came <a href="https://github.com/adminian/PowerDNSimple" target="_blank">PowerDNSimple</a>. Drop it in your modules folder and you get a few new functions:</p>
+<ul>
+<li>Get-SMPLDomains – Get a list of domains hosted at DNSimple.  </li>
+<li>Get-SMPLDomainRecords – Get a list of records for a given domain.  </li>
+<li>Add-SMPLDomainRecord – Create a new record.  </li>
+<li>Update-SMPLDomainRecord – Update an existing record.  </li>
+<li>Remove-SMPLDomainRecord – Delete an existing record.</li>
+</ul>
+<p>Here is a sample script…</p>
+<p>[gist]https://gist.github.com/adminian/faaf45ca3737ab7f94ab[/gist]</p>

@@ -1,0 +1,49 @@
+---
+layout: post
+title: Deploy to Azure Resource Groups using the SDK
+date: 2015-10-31 17:44:54.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+- Development
+- DevOps
+tags:
+- csharp
+- dotnet sdk
+- Resource Manager
+meta:
+  _edit_last: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457640916;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1491;}i:1;a:1:{s:2:"id";i:541;}i:2;a:1:{s:2:"id";i:248;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><img src="{{ site.baseurl }}/assets/image_8.png" alt="" width="750" height="421" /></p>
+<p>&nbsp;</p>
+<h1>Authentication</h1>
+<p>Start by adding the ADAL nuget package.</p>
+<blockquote><p><em><strong>Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory</strong></em></p></blockquote>
+<p>Then add this file to your project:</p>
+<p><script src="https://gist.github.com/devdash/8f9e65b038ef5254e1fd.js"></script>The first line of code in your app will be… </p>
+<blockquote>
+<pre><em><strong>string token = AuthHelper.GetAuthorizationHeader();
+</strong></em></pre>
+</blockquote>
+<p>That’s it for authentication!   </p>
+<p>&nbsp;</p>
+<h1>Setup the Resource Management Client</h1>
+<p>Start by adding the Azure Resource Management NuGet package. </p>
+<blockquote><p><em><strong>Install-Package Microsoft.Azure.Management.Resources</strong></em></p></blockquote>
+<p>Then drop this code into your program:<script src="https://gist.github.com/devdash/ee0687985c4ab077c304.js"></script></p>
+<p>This will give you a client to make requests and create assets using the Azure Resource Manager.</p>
+<p>&nbsp;</p>
+<h1>Create a Resource Group</h1>
+<p>Next we need to create Resource Group to deploy into. Use this code with the client you just created above.</p>
+<p><script src="https://gist.github.com/devdash/7d20b347b70fb578078e.js"></script></p>
+<h1>Create a Resource Deployment</h1>
+<p>Lastly let’s deploy an Azure Resource Template. First I committed a <a href="https://github.com/devdash/testdeployments" target="_blank">template and parameter file to GitHub</a>. They just deploy a simple website. I then create a deployment and set the deployment properties to contain the RAW link to those files. Finally I call <em><strong>CreateOrUpdateAsync</strong> </em>method an pass all the appropriate parameters. Here’s the code:<script src="https://gist.github.com/devdash/fd2c267f25cb0e20eeb8.js"></script></p>

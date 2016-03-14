@@ -1,0 +1,80 @@
+---
+layout: post
+title: 8 Azure Preview Features You Should Look At
+date: 2014-12-29 04:03:06.000000000 -05:00
+type: post
+published: true
+status: publish
+categories:
+- Azure
+tags:
+- Azure Media
+- Azure Monitoring
+- Azure SQL
+- Azure Storage
+- Azure Stream Analytics
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '3368884422'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457439469;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:2045;}i:1;a:1:{s:2:"id";i:2135;}i:2;a:1:{s:2:"id";i:248;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><a href="http://adminian.com/wp-content/uploads/2014/12/PreviewFeatures.png"><img title="PreviewFeatures" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="PreviewFeatures" src="{{ site.baseurl }}/assets/PreviewFeatures_thumb.png" width="800" height="417" /></a></p>
+<p>Azure… There is plenty to keep up with, just dealing with the features that have been released. With that in mind, have you enabled the preview features? Take a minute and go to your subscription account portal and have a look… <a title="https://account.windowsazure.com/PreviewFeatures" href="https://account.windowsazure.com/PreviewFeatures">https://account.windowsazure.com/PreviewFeatures</a></p>
+<h3>Azure Batch</h3>
+<p>Have an application or parts of an application that does processor intensive work? Hand it off to Azure Batch. Basically it pushes your code to a designated amount of VMs and processes the task in parallel.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/batch-technical-overview/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Auditing for Azure SQL Database</h3>
+<p>Exactly what it sounds like… It logs events to an Azure Storage account. What are some of these events you might ask? I’m glad you did: Accessing data, Schema changes, data changes, accounts, roles, permissions, security exceptions. For a complete reference see the <a href="http://go.microsoft.com/fwlink/?linkid=506733&amp;clcid=0x409" target="_blank">Audit Log Format Reference DOCX</a>.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/sql-database-auditing-get-started/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Operational Insights</h3>
+<p>Need to monitor a lot of machines? This is what Operational Insights is good at… Install an agent. It talks to Azure Operational Insights web service running in … well Azure. There is a portal where you can create all kinds of great looking dashboards and reports.</p>
+<p><a href="http://msdn.microsoft.com/library/azure/084e880f-8dc1-46f6-914c-fa647d2f78ef" target="_blank">More Info &gt;&gt;</a></p>
+<h3>PlayReady License Server</h3>
+<p>So you run a live video feed of an event, or a video on demand service and you want to secure your content. You can with PlayReady. This is a token issuing service that allows a player to decrypt your video content. You should check this out if you’re doing anything with video… all the cool kids are using it, and it’s in my wheel house. Shoot me an email if you’d like to discuss more.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/media-services-protect-asset/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Azure Premium Storage</h3>
+<table cellspacing="0" cellpadding="2" width="800" border="0">
+<tbody>
+<tr>
+<td valign="top" width="200"><strong>Premium Storage Disk Type</strong></td>
+<td valign="top" width="200"><strong>P10</strong></td>
+<td valign="top" width="200"><strong>P20</strong></td>
+<td valign="top" width="200"><strong>P30</strong></td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>Disk size</strong></td>
+<td valign="top" width="200">128 GB</td>
+<td valign="top" width="200">512 GB</td>
+<td valign="top" width="200">1024 GB (1 TB)</td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>IOPS per disk</strong></td>
+<td valign="top" width="200">500</td>
+<td valign="top" width="200">2300</td>
+<td valign="top" width="200">5000</td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>Throughput per disk</strong></td>
+<td valign="top" width="200">100 MB</td>
+<td valign="top" width="200">150 MB</td>
+<td valign="top" width="200">200 MB</td>
+</tr>
+</tbody>
+</table>
+<p>5000 IOPS per disk!.. Shut up and take my money!!</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/storage-premium-storage-preview-portal/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Stream Analytics</h3>
+<p>Real time data analytics allows you to analyze patterns in data streams or historical data before storing the events. Think… the backend to your IoT strategy. Not a lot of companies are thinking about their IoT strategy yet… but at Microsoft we are. This is why Gartner and other think-tanks are putting so much weight on data sciences in the coming future. You have been warned.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/stream-analytics-introduction/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Windows Azure Files</h3>
+<p>For this you’ll run some PowerShell to create a file share in an Azure Storage account. VMs can then mount these as a network shares or you can access the share using the REST API, much like blob storage. Pretty sweet feature… one I’m using right now!</p>
+<p><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Billing Alert Service </h3>
+<p>If you’re the account administrator for your subscription, you can set an alert when you spend “X” amount of dollars. Not quite a billing API, but I configured a few alerts to let me know when I’ve spent different amounts of money. </p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/azure-billing-set-up-alerts/" target="_blank">More Info &gt;&gt;</a></p>

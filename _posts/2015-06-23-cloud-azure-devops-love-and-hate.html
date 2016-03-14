@@ -1,0 +1,37 @@
+---
+layout: post
+title: Cloud, Azure, DevOps, Love and Hate
+date: 2015-06-23 22:20:01.000000000 -04:00
+type: post
+published: true
+status: publish
+categories:
+- DevOps
+tags: []
+meta:
+  _edit_last: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1457849825;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:1261;}i:1;a:1:{s:2:"id";i:981;}i:2;a:1:{s:2:"id";i:2045;}}}}
+author:
+  login: adminian
+  email: ian.philpot@microsoft.com
+  display_name: adminian
+  first_name: ''
+  last_name: ''
+---
+<p><img src="{{ site.baseurl }}/assets/062315_2219_CloudAzureD1.png" alt="" /></p>
+<p>Early in 2007 or 2008, the one and only, DigUnix got back from an overnight hack-a-thon. During this thon he was introduced to running Linux boxes in Amazon's datacenters. Till then, he and I used to just remotely build Gentoo boxes from across the hall and get in trouble for scream profanity in the office. Hey we worked with Linux… it's what you do. This is when I was introduced to AWS and my love for the "cloud" was born. Of Couse this is before we called it the cloud.</p>
+<p>Later in 2011 I was on my way to one of the Atlanta PFE team meetings we hold at the Alpharetta Office once a month. I'd carpooled that day with another PFE, because we recently discovered that we lived close to one another. What I didn't know was this man would change my life for the foreseeable future. During this car ride he started telling me about this thing called Windows Azure… I promptly forced him to immediately create me an account when we got to the office. A year later I was giving talks about automated deployments to Azure, but I get a head of myself.</p>
+<p>This was a time when the Silverlight portal was all the hotness and our biggest selling point. Yea, so we've come a long way and that's all I have to say about that. These are the days before IaaS or Azure AD. We used ACS to authenticate cloud apps and life was setup hell. Still it laid a framework for building great things. I've worked for, and with, many of the Azure Product Groups over the years. I've had source code access to Reddog, and helped build telemetry systems customers use for their feedback loops. It's been a great and busy ride. Through it all I kept saying that I was going to put up some good content and share some of my learning here, but alas I never got beyond small tidbits of things I wanted to remember… till now.</p>
+<p>I will start with DevOps.</p>
+<p>I'm not a fanatic, this is the only way to solve world hunger, DevOps practitioner. I've worked with cloud providers, ISVs, Partners, and IT shops alike exploring this world. I've seen some of what works and some of what doesn't. I was skeptical about the whole culture thing, and transformed into a believer. I have a skewed view toward .Net Apps and Azure. You've been warned!</p>
+<p>Let's start with life cycle, and this will set the stage for the rest of what I plan on talking about.</p>
+<ul>
+<li>Develop</li>
+<li>Build</li>
+<li>Test</li>
+<li>Deploy</li>
+<li>Configure</li>
+<li>Monitor</li>
+</ul>
+<p>This is where my framework will start. I'm going to talk about each item listed above in hopefully one post each. I plan on sharing not only tools and practices I've found that work, but also some of the cultural hurtles I've seen. I'm creating a repo that will house demos and other goodies needed to make this work. It should be a complete deployment of some sort of app/system that demonstrates most if not all the aspects needed to be successful using the Microsoft Stack in Azure. Beyond that… I don't really care. Deal with it.</p>
+<p>Automation is king. I've made the joke with my customers over the years, automate everything so you can pretend to work and play video games. It's not a joke. Let's get started…</p>
