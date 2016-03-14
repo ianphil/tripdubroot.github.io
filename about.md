@@ -2,11 +2,9 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "img/sample_feature_img_2.png"
+feature-img: "img/maxresdefault.jpg"
 ---
 
-Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+Ian Philpot is an adept software developer and technologist. He’s worked on [Emmy award winning projects](http://nbcsportsgrouppressbox.com/2015/05/05/xxii-olympic-winter-games-propels-nbc-sports-group-to-11-sports-emmy-awards/) and with customers around the globe. Cloud technologies are his focus and passion. When he’s not behind a computer you’ll find him on a trail, hanging on to his bike or out of breath trying to run.
 
-Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
