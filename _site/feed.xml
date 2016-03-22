@@ -5,15 +5,39 @@
     <atom:link href="http://tripdubroot.com/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://tripdubroot.com/</link>
     <description>To us, and those like us...</description>
-    <pubDate>Tue, 22 Mar 2016 16:39:46 -0400</pubDate>
+    <pubDate>Tue, 22 Mar 2016 18:35:39 -0400</pubDate>
     
       <item>
-        <title>Azure does Open Source Amigo</title>
-        <link>http://tripdubroot.com/2016/03/15/open-source-azure.html</link>
-        <guid isPermaLink="true">http://tripdubroot.com/2016/03/15/open-source-azure.html</guid>
-        <description>&lt;p&gt;That’s right mf, Azure do it like you want it.&lt;/p&gt;
+        <title>5 Azure Tools Everyone Should Be Using</title>
+        <link>http://tripdubroot.com/2016/03/22/azure-tools-everyone-should-be-using.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/2016/03/22/azure-tools-everyone-should-be-using.html</guid>
+        <description>&lt;p&gt;Whether you are a seasoned Azure vet, or just coming over to the new dark side… tools make our lives easier. This is a list of tools I use and think everyone should also!&lt;/p&gt;
+
+&lt;h4 id=&quot;azure-cli--azure-powershell&quot;&gt;Azure CLI &amp;amp; Azure PowerShell&lt;/h4&gt;
+&lt;p&gt;Both of these tools provide a command line interface for developers and IT administrators to develop, deploy and manage Microsoft Azure applications. Azure CLI is cross-platform so no excuses. PowerShell you need Windows… for now.
+&lt;a href=&quot;https://github.com/azure/azure-xplat-cli&quot;&gt;https://github.com/azure/azure-xplat-cli&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/Azure/azure-powershell&quot;&gt;https://github.com/Azure/azure-powershell&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;visual-studio-community&quot;&gt;Visual Studio Community&lt;/h4&gt;
+&lt;p&gt;Visual Studio Community is a free, fully-featured, and extensible IDE for creating modern applications for Windows, Android, and iOS, as well as web applications and cloud services. After you install the SDK it has some of the best Azure Tools available. Did I mention Visual Studio is free!
+&lt;a href=&quot;https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx&quot;&gt;https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;axcopy&quot;&gt;AxCopy&lt;/h4&gt;
+&lt;p&gt;AzCopy is awesome! And it’s a Windows command-line utility designed for copying data to and from Microsoft Azure Blob, File, and Table storage using simple commands with optimal performance. You should be using this!
+&lt;a href=&quot;https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/&quot;&gt;https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;microsoft-azure-storage-explorer&quot;&gt;Microsoft Azure Storage Explorer&lt;/h4&gt;
+&lt;p&gt;Another cross platform application on the list. Microsoft Azure Storage Explorer is a standalone app from Microsoft that allows you to easily work with Azure Storage data. It’s one of the first things I install these days on a new machine…
+&lt;a href=&quot;http://storageexplorer.com/&quot;&gt;http://storageexplorer.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;kudu&quot;&gt;Kudu&lt;/h4&gt;
+&lt;p&gt;Kudu is the engine behind git/hg deployments, WebJobs, and various other features in Azure Web Sites. It can also run outside of Azure. Eventually you will do something with websites on Azure, this is a resource you must know how to use!
+&lt;a href=&quot;https://github.com/projectkudu/kudu&quot;&gt;https://github.com/projectkudu/kudu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OK, so admittedly that last one might not be for everyone, but it’s such a great tool that not many folks know about I decided to include it. Hope this helps you!&lt;/p&gt;
+
+&lt;p&gt;Rock!&lt;/p&gt;
 </description>
-        <pubDate>Tue, 15 Mar 2016 08:48:00 -0400</pubDate>
+        <pubDate>Tue, 22 Mar 2016 00:00:00 -0400</pubDate>
       </item>
     
       <item>
