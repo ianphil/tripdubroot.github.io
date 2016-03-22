@@ -2,7 +2,7 @@
 layout: post
 title: Azure does Open Source Amigo
 date: 2016-03-15 07:48:00 -0500
-published: true
+published: false
 tags: Azure, Open Source
 ---
 
