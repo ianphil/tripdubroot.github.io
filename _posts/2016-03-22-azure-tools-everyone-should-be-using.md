@@ -4,6 +4,7 @@ title: 5 Azure Tools Everyone Should Be Using
 date: 2016-03-22
 published: true
 tags: Tools, Azure
+feature-img: "img/5Tools.png"
 ---
 
 Whether you are a seasoned Azure vet, or just coming over to the new dark side... tools make our lives easier. This is a list of tools I use and think everyone should also!
