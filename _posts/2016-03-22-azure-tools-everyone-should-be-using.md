@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Azure Tools Everyone Should Be Using
-date: 2016-03-22 18:30:00 -0500
+date: 2016-03-22
 published: true
 tags: Tools, Azure
 ---
