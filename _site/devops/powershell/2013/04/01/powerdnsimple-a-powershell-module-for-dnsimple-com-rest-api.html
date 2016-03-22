@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>PowerDNSimple: A PowerShell module for DNSimple.com REST API | TripDubRoot</title>
+	<meta name="description" content="&nbsp;This journey started when I was building a test lab on Windows Azure. The goal was to run two SharePoint instances, one SharePoint 2010 farm and one Sh...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/devops/powershell/2013/04/01/powerdnsimple-a-powershell-module-for-dnsimple-com-rest-api.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">PowerDNSimple: A PowerShell module for DNSimple.com REST API</h1>
+    <p class="meta">
+    April 1, 2013
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><a href="http://adminian.files.wordpress.com/2013/04/dnsimple.png"><img title="dnsimple" style="display:inline;border-width:0;" border="0" alt="dnsimple" src="/assets/dnsimple_thumb.png" width="640" height="373" /></a>&nbsp;</p>
+<p>This journey started when I was building a test lab on Windows Azure. The goal was to run two SharePoint instances, one SharePoint 2010 farm and one SharePoint 2013 farm. In keeping with automating this network setup and build… I wanted a good way to lookup my VM’s VIP assigned by Azure and update an A record on DNSimple. It turns out a simple DNS Alias record is really what I needed, but never the less I’ve had a bit of fun and learned a few things along the way.</p>
+<p>I’ll come back to working with Azure in a later post, for now let’s focus on DNSimple…</p>
+<p>DNSimple.com offers a great service! I first heard about them from <a href="http://www.hanselman.com/blog/" target="_blank">Scott Hanselman</a>. I’ve not been disappointed. Not only do they have a robust API, but also 1 click DNS configuration for many popular services (I won’t hold it against them if they don’t have a Office365 configuration yet). </p>
+<p>My scripting language of choice is PowerShell. Naturally I turned there first to start automating. Out of this came <a href="https://github.com/adminian/PowerDNSimple" target="_blank">PowerDNSimple</a>. Drop it in your modules folder and you get a few new functions:</p>
+<ul>
+<li>Get-SMPLDomains – Get a list of domains hosted at DNSimple.  </li>
+<li>Get-SMPLDomainRecords – Get a list of records for a given domain.  </li>
+<li>Add-SMPLDomainRecord – Create a new record.  </li>
+<li>Update-SMPLDomainRecord – Update an existing record.  </li>
+<li>Remove-SMPLDomainRecord – Delete an existing record.</li>
+</ul>
+<p>Here is a sample script…</p>
+<p>[gist]https://gist.github.com/adminian/faaf45ca3737ab7f94ab[/gist]</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

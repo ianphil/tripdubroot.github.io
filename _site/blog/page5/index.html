@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> TripDubRoot</title>
+	<meta name="description" content="To us, and those like us...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/blog/page5/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/powershell/2015/05/29/troubleshooting-azure-resource-manager-failed-messages.html">
+            Troubleshooting Azure Resource Manager Failed Messages
+          </a>
+        </h1>
+        <p class="meta">
+          May 29, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://devian.co/wp-content/uploads/2015/05/brokenComp.jpg"><img class="alignnone size-medium wp-image-1191" src="/assets/brokenComp-300x218.jpg" alt="brokenComp" width="300" height="218" /></a></p>
+<p>So you're in the new portal and trying to deploy something? It runs for a while and then fails! The message returned isn't great and looks something like:</p>
+<blockquote><p>The operation name is: Microsoft.ClassicCompute/virtualMachines/extensions/write The status is: Failed</p></blockquote>
+<p>Well, it happens... A good way to start to troubleshoot that is using PowerShell. <a href="http://ianp.co/1PSAclL" target="_blank">Go setup PowerShell</a> if you haven't already. Then use the command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt;</pre>
+<p>This will return all the log entries from the last deployment. It should provide you a window into what is actually happening. Last I used this was deploying an Azure SQL database. The error I received was lacking detail, but after I ran that command I was able to see that East US was running hot and I need to provision in a different Datacenter...</p>
+<p>There are other variations of that command as well. If you want a specific deployment that you've run for a resource group you would use this command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -DeploymentName &lt;DeploymentName&gt;</pre>
+<p>If you want all the logs for a resource group you would run:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -All</pre>
+<p>Hope this helps you figure out what's happening with a Resource Manager based deployment goes wrong!</p>
+
+        <a class="button" href="/azure/powershell/2015/05/29/troubleshooting-azure-resource-manager-failed-messages.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/development/2015/05/05/visual-studio-code-yeoman-setup.html">
+            Visual Studio Code: Yeoman Setup
+          </a>
+        </h1>
+        <p class="meta">
+          May 5, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>I'm a huge fan of Sublime Text (and a paying customer), so when I heard we'd released a light weight code editor called <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, I had to go see...</p>
+<p>I was happy to see that it is trully light weight, shares some of the Sublime Text layout features, and is cross platform. Awesome... After downloading and installing it, I have to say I was a little lost. This is because I was thinking Visual Studio and not Sublime Text. Once I made that leap and realized there is no file -&gt; New Project I went to work. Here is what I did...</p>
+<p>First I noticed on the "Start" screen there is an instruction that states "If you don't have an existing project, we suggest using <a href="http://yeoman.io/" target="_blank">Yeoman </a>to scaffold out a new one.".</p>
+<p>[caption id="" align="aligncenter" width="878"]<a href="https://adminian.blob.core.windows.net/blog/VSCode-Yeoman.PNG"><img class="" src="/assets/VSCode-Yeoman.PNG" alt="vscode" width="878" height="663" /></a> VSCode... use Yeoman[/caption]</p>
+<p>Ok, so let's do that. I already had node installed so I just walked through verifying I had the latest and greatest node/npm bits using:</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">node </span><span class="pun">--</span><span class="pln">version </span><span class="o"><span class="pun">&amp;&amp;</span></span><span class="pln"> npm </span><span class="pun">--</span><span class="pln">version</span></code></pre>
+<p>This shows that I am in fact running better than:</p>
+<ul>
+<li>Node.js v0.10.x+</li>
+<li>npm v2.1.0+</li>
+</ul>
+<p>From there let's get the Yeoman tool-set installed globally.</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">npm install </span><span class="pun">--</span><span class="pln">global yo bower grunt</span><span class="pun">-</span><span class="pln">cli</span></code></pre>
+<p>Once I've installed the tool set, I wanted a generator to scaffold out the project so I don't have too.</p>
+<pre><code class="language-sh prettyprint" data-lang="sh"><span class="pln">npm install </span><span class="pun">--</span><span class="pln">global generator</span><span class="pun">-</span><span class="pln">angular@0</span><span class="pun">.</span><span class="lit">11.1</span></code></pre>
+<p>Now! I have all the necessary tools to actually lay down some starter bits and get coding. Since I'm using the Yeoman tutorial as the basis to get my project going and I like Angular we'll scaffold out an Angular starter project.</p>
+<pre><code class="language-sh prettyprint"><span class="pln">yo angular</span></code></pre>
+<p>I'm not ready to use Sass right now so I will say no to that and accept the defaults from there.</p>
+<p>[caption id="" align="aligncenter" width="1091"]<a href="https://adminian.blob.core.windows.net/blog/AngularScoff.PNG"><img class="" src="/assets/AngularScoff.PNG" alt="angular gen" width="1091" height="896" /></a> Angular Gen Output[/caption]</p>
+<p>Awesome! Now I have an Angular Web project ready to go. Let's open it in VSCode and start work. File -&gt; Open Folder aaaannnd...</p>
+<p>[caption id="" align="aligncenter" width="1044"]<a href="https://adminian.blob.core.windows.net/blog/VSCodeOpenFolder.PNG"><img class="" src="/assets/VSCodeOpenFolder.PNG" alt="OpenFolder" width="1044" height="789" /></a> Ready to work![/caption]</p>
+<p>Next post we'll do some work in VSCode... till then.</p>
+
+        <a class="button" href="/development/2015/05/05/visual-studio-code-yeoman-setup.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/math/2015/03/22/narcissism-in-numbers.html">
+            Narcissism in Numbers and My New Favorite Number: 8208
+          </a>
+        </h1>
+        <p class="meta">
+          March 22, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Sometimes maths is awesome. I've been catching up on the podcast <a href="http://www.infinitemonkeycage.com/" target="_blank"><em>The Infinite Monkey Cage</em></a>. In one of the episodes they talk about number theory and specifically narcissistic numbers. My interest was peeked, so I had to write some quick code to prove out this theorem?? myself.</p>
+<p><strong>nar·cis·sism</strong> /ˈnärsəˌsizəm/ (noun) - excessive or erotic interest in oneself and one's physical appearance.</p>
+<p>A narcissistic number, as defined by Wikipedia <a href="http://en.wikipedia.org/wiki/Narcissistic_number" target="_blank">here</a>, as a number that is the sum of its own digits each raised to the power of the number of digits. So basically:</p>
+<p>153 = 1^3 + 5^3 + 3^3 = 153</p>
+<p>How can this not intrigue you?</p>
+<p>[code lang="powershell"]<br />
+function isNarcissisticNumber {<br />
+    param([int]$number)</p>
+<p>    # Convert numbers to an array to work with each number and get a count of intergers<br />
+    $numbers = $number.ToString().ToCharArray()</p>
+<p>    # A place to total up each individual integer<br />
+    $nar = 0</p>
+<p>    # This is where the magic happens. We get the power equal to the length of the array<br />
+    # for each of the individual intagers then get the sum of all.<br />
+    foreach($num in $numbers) {<br />
+        $num = [char]::GetNumericValue($num)<br />
+        $nar += [math]::Pow($num, $numbers.Length)<br />
+    }</p>
+<p>    # Simple check to see if the total of the individual numbers is the same as the<br />
+    # inital number.<br />
+    if ($nar -eq $number) {<br />
+        return $true<br />
+    }<br />
+    else {<br />
+        return $false<br />
+    }<br />
+}</p>
+<p>1..10000 | foreach { if ( isNarcissisticNumber $_ ) { $_ } }<br />
+[/code]</p>
+<p>The output will look like this:</p>
+<p><a href="http://adminian.com/wp-content/uploads/2015/03/narcissisticnumbers.png"><img class="alignnone size-medium wp-image-1071" src="/assets/narcissisticnumbers-300x112.png" alt="narcissisticnumbers" width="300" height="112" /></a></p>
+
+        <a class="button" href="/math/2015/03/22/narcissism-in-numbers.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/development/devops/2015/03/03/the-case-of-azure-websites-and-continuous-deployment.html">
+            The Case of Azure Websites and Continuous Deployment
+          </a>
+        </h1>
+        <p class="meta">
+          March 3, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://adminian.com/wp-content/uploads/2015/03/deployment2.png"><img class="alignnone size-medium wp-image-991" src="/assets/deployment2-300x137.png" alt="deployment2" width="300" height="137" /></a></p>
+<p>TL;DR: Build a site to do wireless surveys: <a href="https://wlansurvey.azurewebsites.net/">https://wlansurvey.azurewebsites.net/</a></p>
+<p>So this post has a misleading title... Because I'm not going to explain how this works, Azure Websites continuous deployment is not anything really new, and also It's well documented <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/" target="_blank">here</a> and <a href="http://www.hanselman.com/blog/MovingAWebsiteToAzureWhileAddingContinuousDeploymentFromGit.aspx" target="_blank">here</a>.</p>
+<p>Anyhow, the family and I recently moved into a new house. Our ISP was out today, running cables and getting things setup. Since I didn't really know how well my wireless router was going to cover the house, I asked Nick the fella working on getting me back online, if he had the ability to do a wireless survey of my house.</p>
+<p>Nick said, "Well they give us this <em>Airport Utillity</em> app on our phone. I can tell you what the db levels are, but I'm not really sure what they mean".</p>
+<p>Problem: This person should be able to tell me what my signal quality is, room by room.</p>
+<p>Solution: Five minutes googling with bing lead me to a <a href="http://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm" target="_blank">Stack Overflow post</a> that sounded smart enough and even had math explaining how to go from dBm to Quality percentage. <strong>Time to deploy something to Azure.</strong></p>
+<p>Enter Azure Websites Continuous Deployment. While he finished up the house, I started writing some quick code, pushed to GitHub, and setup my website in Azure to deploy from... you guessed it GitHub.</p>
+<p>At this point you maybe asking: "Pray tell, how did you deploy to Azure with no internet connectivity?".</p>
+<p>To that I say: "With my Verizon Jetpack, of course".</p>
+<p>By the time he was finished, I'd installed the <em>Airport Utility</em> app on my iPhone. Ran around the house gathering the dBm metrics for each room, and plugged them into: <a href="http://wlansurvey.azurewebsites.net" target="_blank">http://wlansurvey.azurewebsites.net</a>.</p>
+<p>He was a little shocked, but took down the web address and said he was going to tell all the guys at the office.</p>
+<p>Awesome! Hope you all had a great weekend... I spent mine moving.</p>
+
+        <a class="button" href="/azure/development/devops/2015/03/03/the-case-of-azure-websites-and-continuous-deployment.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2015/02/20/post-to-yammer-from-azure-automation.html">
+            Post to Yammer from Azure Automation
+          </a>
+        </h1>
+        <p class="meta">
+          February 20, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>This little diddy pulls down the Azure Updates RSS feed, get's the last days posts (if there are any) and posts them to Yammer using email... Something to keep folks in our Yammer group informed.</p>
+<p><script src="https://gist.github.com/devdash/ae7a06f5e84c79949405.js"></script></p>
+
+        <a class="button" href="/2015/02/20/post-to-yammer-from-azure-automation.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/blog/page4" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      Prev
+    </a>
+    
+    
+    <a href="/blog/page6" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

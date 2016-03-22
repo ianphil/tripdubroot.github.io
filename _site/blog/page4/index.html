@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> TripDubRoot</title>
+	<meta name="description" content="To us, and those like us...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/blog/page4/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/development/2015/07/01/authenticate-to-the-azure-service-management-api.html">
+            Authenticate to the Azure Service Management API
+          </a>
+        </h1>
+        <p class="meta">
+          July 1, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/062515_1835_Authenticat1.png" alt="" /></p>
+<p>So, back in the day we used x509 Certificates to authenticate to Azure's API. A year or so ago, Azure Active Directory became the defacto method of authentication. MSDN talks about it in the article: <a href="https://msdn.microsoft.com/en-us/library/azure/dn790557.aspx">Authenticating Azure Resource Manager requests</a>. From the article:</p>
+<blockquote><p>"<span style="color: #2a2a2a; font-family: Segoe UI; font-size: 10pt; background-color: white;">All of the tasks that you do on resources using the Azure Resource Manager must be authenticated with Azure Active Directory. The easiest way to do this is to use PowerShell or Azure CLI. If you don't have access to PowerShell or Azure CLI, use the Azure Management Portal to set up authentication.</span>"</p></blockquote>
+<p>So yea… this isn't necessarily true. I worked with a couple of folks from support engineering to use the common authentication endpoint, so that you don't have to setup an application in Azure Active Directory and provide an application id.</p>
+<p>I posted the code up to GitHub here: <a href="https://github.com/devdash/EzAzureMgmtApiAuth">devdash/EzAzureMgmtApiAuth</a>.</p>
+<p><strong>*Note:</strong> I can't claim this is supported in anyway… but it works great and has since the beginning.</p>
+<h1>The App</h1>
+<p>Basically it's a console app that asks you to login using your Azure credentials, asks you which subscription you'd like to use if you have more than one, and then finally prints out the choice you made. Simple, but I think powerful.</p>
+<p><img src="/assets/062515_1835_Authenticat2.png" alt="" /></p>
+<h1>The Code</h1>
+<p>If you're anything like me, you'll open Git Shell and run:</p>
+<pre>git clone <a href="https://github.com/devdash/EzAzureMgmtApiAuth.git">https://github.com/devdash/EzAzureMgmtApiAuth.git</a></pre>
+<p>Then open the SLN:</p>
+<pre>C:srcghEzAzureMgmtApiAuth [master]&gt; .AzureRestPlayground.sln</pre>
+<p>Now normally once I have the solution open in Visual Studio and I see that it's a console app I start looking at: Program.cs. Below is the relevant code, the code that kicks off the authentication process…</p>
+<p>[code lang="csharp"]<br />
+static void Main(string[] args)<br />
+{<br />
+     var azSubs = new AzureSubscriptions();<br />
+     var subList = azSubs.GetSubscriptionList();</p>
+<p>     ...<br />
+}<br />
+[/code]</p>
+<p>This code isn't rocket science. It initializes an object of type <strong>AzureSubscriptions</strong> and calls the method <strong>GetSubscriptionList</strong>. Let's go have a look at this method, particularly the second line:</p>
+<p>[code lang="csharp"]<br />
+string token = AuthHelper.GetAuthorizationHeader();<br />
+[/code]</p>
+<p>Off to look at the <strong>AuthHelper</strong> class and it's static method <strong>GetAuthorizationHeader</strong>…</p>
+<p>[code lang="csharp"]<br />
+public static string GetAuthorizationHeader()<br />
+{<br />
+     AuthenticationResult result = null;</p>
+<p>     var context = new AuthenticationContext(&quot;https://login.windows.net/common&quot;); // tenant agnostic endpooint<br />
+     result = context.AcquireToken(&quot;https://management.core.windows.net/&quot;,<br />
+                                   &quot;1950a258-227b-4e31-a9cf-717495945fc2&quot;, // Windows Azure Management API's Client ID<br />
+                                   new Uri(&quot;urn:ietf:wg:oauth:2.0:oob&quot;)); // standard redirect for native apps (console, desktop, mobile, etc)</p>
+<p>     if (result == null)<br />
+     {<br />
+         throw new InvalidOperationException(&quot;Failed to obtain the JWT token&quot;);<br />
+     }</p>
+<p>     return result.AccessToken;<br />
+}<br />
+[/code]</p>
+<p>And here finally we se some good stuff. We got all this good ness by pulling in the <strong>ADAL</strong> nuget package and writing a couple of lines of code. We pulled the "Client ID" being passed to the <strong>AcquireToken</strong> method using fiddler and tracing a "promoted" app and borrowing it's ID. This is why my note above states that this probably isn't supported. From here we are returned a token. We construct our Auth Header in the HttpHelper class using this line of code:</p>
+<p>[code lang="csharp"]<br />
+request.Headers.Add(HttpRequestHeader.Authorization, &quot;Bearer &quot; + token);<br />
+[/code]</p>
+<p>Well that's that. Using the <strong>ADAL</strong> library and a common auth endpoint. Now any app can authenticate to any subscriptions service management API given the right credentials. Awesome!!</p>
+
+        <a class="button" href="/azure/development/2015/07/01/authenticate-to-the-azure-service-management-api.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/devops/2015/06/26/post-to-slack-from-powershell-2.html">
+            Post to Slack from PowerShell
+          </a>
+        </h1>
+        <p class="meta">
+          June 26, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/062615_1602_PosttoSlack1.png" alt="" /></p>
+<p>I was working on some reporting/alerting from my deployment and monitoring systems. I want them to talk to me on slack. A lot of the work is done in PowerShell so natrually this is some PoSh code I need... Anyhow I wanted to share...</p>
+<p>First you will need to enable Slackbot remote communications. I just went into my teams <strong>Intergrations</strong> and added <strong>Slackbot</strong>. This will generate a URI with a token. Copy that and keep it handy. Here is the simple script to post as Slackbot.</p>
+<blockquote><p>
+$slackbotUrl = "https://MYSLACKNAME.slack.com/services/hooks/slackbot?token=xxxxxxxxxxxxxxxxxxxxxxxxx"<br />
+$channelParam = "&amp;channel=%23general" # %23 is the # sign<br />
+$postUrl = $slackbotUrl + $channelParam<br />
+$message = "Another Post to Slackbot..."</p>
+<p>Invoke-WebRequest -Uri $postUrl -Body $message -Method Post</p></blockquote>
+
+        <a class="button" href="/devops/2015/06/26/post-to-slack-from-powershell-2.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/devops/2015/06/23/cloud-azure-devops-love-and-hate.html">
+            Cloud, Azure, DevOps, Love and Hate
+          </a>
+        </h1>
+        <p class="meta">
+          June 23, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/062315_2219_CloudAzureD1.png" alt="" /></p>
+<p>Early in 2007 or 2008, the one and only, DigUnix got back from an overnight hack-a-thon. During this thon he was introduced to running Linux boxes in Amazon's datacenters. Till then, he and I used to just remotely build Gentoo boxes from across the hall and get in trouble for scream profanity in the office. Hey we worked with Linux… it's what you do. This is when I was introduced to AWS and my love for the "cloud" was born. Of Couse this is before we called it the cloud.</p>
+<p>Later in 2011 I was on my way to one of the Atlanta PFE team meetings we hold at the Alpharetta Office once a month. I'd carpooled that day with another PFE, because we recently discovered that we lived close to one another. What I didn't know was this man would change my life for the foreseeable future. During this car ride he started telling me about this thing called Windows Azure… I promptly forced him to immediately create me an account when we got to the office. A year later I was giving talks about automated deployments to Azure, but I get a head of myself.</p>
+<p>This was a time when the Silverlight portal was all the hotness and our biggest selling point. Yea, so we've come a long way and that's all I have to say about that. These are the days before IaaS or Azure AD. We used ACS to authenticate cloud apps and life was setup hell. Still it laid a framework for building great things. I've worked for, and with, many of the Azure Product Groups over the years. I've had source code access to Reddog, and helped build telemetry systems customers use for their feedback loops. It's been a great and busy ride. Through it all I kept saying that I was going to put up some good content and share some of my learning here, but alas I never got beyond small tidbits of things I wanted to remember… till now.</p>
+<p>I will start with DevOps.</p>
+<p>I'm not a fanatic, this is the only way to solve world hunger, DevOps practitioner. I've worked with cloud providers, ISVs, Partners, and IT shops alike exploring this world. I've seen some of what works and some of what doesn't. I was skeptical about the whole culture thing, and transformed into a believer. I have a skewed view toward .Net Apps and Azure. You've been warned!</p>
+<p>Let's start with life cycle, and this will set the stage for the rest of what I plan on talking about.</p>
+<ul>
+<li>Develop</li>
+<li>Build</li>
+<li>Test</li>
+<li>Deploy</li>
+<li>Configure</li>
+<li>Monitor</li>
+</ul>
+<p>This is where my framework will start. I'm going to talk about each item listed above in hopefully one post each. I plan on sharing not only tools and practices I've found that work, but also some of the cultural hurtles I've seen. I'm creating a repo that will house demos and other goodies needed to make this work. It should be a complete deployment of some sort of app/system that demonstrates most if not all the aspects needed to be successful using the Microsoft Stack in Azure. Beyond that… I don't really care. Deal with it.</p>
+<p>Automation is king. I've made the joke with my customers over the years, automate everything so you can pretend to work and play video games. It's not a joke. Let's get started…</p>
+
+        <a class="button" href="/devops/2015/06/23/cloud-azure-devops-love-and-hate.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/windows%20client/2015/06/23/changes-to-windows-10-preview-insider-hub.html">
+            Changes to Windows 10 Preview - Insider Hub
+          </a>
+        </h1>
+        <p class="meta">
+          June 23, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://devian.co/wp-content/uploads/2015/06/Tech-Preview_Start-menu_x600.png"><img class="alignnone size-full wp-image-1421" src="/assets/Tech-Preview_Start-menu_x600.png" alt="Win10TechPreview" width="600" height="337" /></a></p>
+<p>I use this tool to say up-to-date with what's going on in Windows 10. The most recent announcement stated that this is not going to be installed going forward. It also lists how to get it back, so for posterity sake I'd like to post it here to remember. From the announcement...</p>
+<article id="content" class="content"><strong>Insider Hub &amp; Windows Feedback app</strong></p>
+<p>Because we’re getting ready for the final release, we’re removing a few things we don’t expect to ship to everyone. So starting with the next build, the Insider Hub will no longer be pre-installed. Windows Insiders can reinstall the Insider Hub app through the following steps:</p>
+<ul>
+<li>Go to Settings, System, Apps &amp; features</li>
+<li>Click Manage optional features then Add a feature</li>
+<li>Select the Insider Hub entry (the list is in alphabetical order) and click Install.</li>
+</ul>
+<p>You will have to go through this process with each build we flight prior to the final release on July 29th, but once we start flighting new builds after July 29th it will be preinstalled again.<br />
+The Windows Feedback app will continue to be included in builds and in the final release. But as I noted above, the Windows Feedback app will have functionality specific to Windows Insiders who are registered for the program with their MSA connected to their PC.</p>
+</article>
+
+        <a class="button" href="/windows%20client/2015/06/23/changes-to-windows-10-preview-insider-hub.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/events/2015/06/16/ive-have-a-new-role-at-microsoft.html">
+            I Have a New Role at Microsoft
+          </a>
+        </h1>
+        <p class="meta">
+          June 16, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/061615_1528_IveHaveaNew1.png" alt="" /></p>
+<p>So, I was a Primer Field Engineer, but now I'm a Technology Evangelist. What's up with this move? Yes I have a very technical skillset in development and cloud technologies. I've worked on some of the largest projects and with some of the toughest customers. I've been very fortunate to get to do awesome work over the past five years as a PFE. Now it's time to share my learnings and pay it forward… at least for a while.</p>
+<p>I have a simple plan, be genuine. It's worked really well for me working with customers in a more intimate atmosphere, but I suspect it will serve me well as I continue my journey in this new role. In this new role, I'll be working with the community in Atlanta, hanging out at places like the Atlanta Tech Village working with startups, and creating content for Channel 9. I'm only a couple weeks into the role, but so far it's kind of exciting.</p>
+<p>I have been thinking of how to best share and I think some practical and impractical projects will be best, so I'm working on two projects as of now:</p>
+<p><strong>Kinect Driver for Azure</strong> – This will be used to off load processing of the Kinect data streams to Azure… Think IoT.</p>
+<p><strong>Azure DevOps Toolkit</strong> – This will demonstrate various roadmaps that one can use to deploy and monitor apps in Azure… Think 10 deploys a day.</p>
+<p>I'm still prototyping these out, but expect to see some content relating to these in the coming months. So yea, let's get started!</p>
+
+        <a class="button" href="/events/2015/06/16/ive-have-a-new-role-at-microsoft.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/blog/page3" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      Prev
+    </a>
+    
+    
+    <a href="/blog/page5" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Azure Web Sites DaaS–Diagnostics as a Service | TripDubRoot</title>
+	<meta name="description" content="&nbsp;DaaS for Azure Web Sites is a great tool when “bad things happen to a good site”! It allows you to collect a plethora of different logs and parses them...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/administration/azure/development/devops/2014/12/02/azure-web-sites-daasdiagnostics-as-a-service.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Azure Web Sites DaaS–Diagnostics as a Service</h1>
+    <p class="meta">
+    December 2, 2014
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><a href="http://adminian.com/wp-content/uploads/2014/12/image.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/assets/image_thumb.png" width="507" height="171" /></a></p>
+<p>&nbsp;</p>
+<p>DaaS for Azure Web Sites is a great tool when “bad things happen to a good site”! It allows you to collect a plethora of different logs and parses them into an easily digestible format. The idea is to enable you to get to root cause without turning to the forums or Microsoft support. I’m running a WordPress site that, knock on digital wood, is pretty rock solid. Even so, I’m going to use this site to play around.</p>
+<p>Until the recent <a href="http://azure.microsoft.com/blog/2014/12/01/new-updates-to-daas-diagnostics-as-a-service-for-azure-websites/" target="_blank">announcement</a>, the collection and parsing of PHP logs wasn’t an option, but now DaaS will collect PHP specific files along with Event Logs, Memory Dumps and HTTP Logs. First you will need to enable <strong>Web Server Logging</strong> to the <strong>File System</strong>. With that down just browse over to <a href="https://%3cyoursitename%3e.scm.azurewebsites.net/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/DaaS</b></a> and you’ll get a page like this…</p>
+<p><a href="http://adminian.com/wp-content/uploads/2014/12/image1.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/assets/image_thumb1.png" width="534" height="258" /></a></p>
+<p>&nbsp;</p>
+<p>All you need to do is click <strong>Diagnose Now</strong> and your off to the races. Oh, and you can also schedule an analysis if you’d like…</p>
+<p>Once that is complete you can download your logs at: <a href="https://&lt;YourSiteName&gt;.scm.azurewebsites.net/Zip/data/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/Zip/</b>data/<b>DaaS</b></a>. </p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

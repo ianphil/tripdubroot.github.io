@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>How To: Setup Windows Azure PowerShell | TripDubRoot</title>
+	<meta name="description" content="A lot of the demos, lab environments, and test I do are in Azure. I try to script everything so that it’s repeatable and I don’t turn into a monkey clicking ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/powershell/2013/04/16/how-to-setup-windows-azure-powershell.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">How To: Setup Windows Azure PowerShell</h1>
+    <p class="meta">
+    April 16, 2013
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p>A lot of the demos, lab environments, and test I do are in Azure. I try to script everything so that it’s repeatable and I don’t turn into a monkey clicking next. What fun is that? With that said I’ve put together how I setup my environment for communicating with Azure via PowerShell.</p>
+<p>First things first you’ll need <a href="http://www.microsoft.com/web/downloads/platform.aspx" target="_blank">Microsoft Web Platform Installer</a>. Once this is installed go ahead and open it. You should see a screen that looks like this:</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb.png" width="600" height="405" border="0" /></a></p>
+<p>Click add next to Windows Azure PowerShell and click install.</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image1.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb1.png" width="600" height="408" border="0" /></a></p>
+<p>You should see the Prerequisites screen, click I Accept.</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image2.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb2.png" width="500" height="346" border="0" /></a></p>
+<p>This should start the install. Once it’s complete the module for Azure PowerShell should be installed. It also installed some of the Azure SDK libraries, but this is only part of the story. Now that we have the Azure module installed we need to configure it to talk with our Azure Subscription (by the way you should have one for this to work!). Here again this is something I do a little too often, so I keep a script around that handles everything.</p>
+<p><script src="https://gist.github.com/adminian/96e90c1a397f07b5dc18.js"></script></p>
+<p>Let me explain what’s going on here. First we import the module you just installed. This will need to be done each time you open PowerShell unless you use the Azure PowerShell shell. [*Hint: Put it in your profile.]  Next we have a couple of options. If you don’t have a certifiate you’ll need to create one. This is where the “makecert” command comes in. Once you've created it you'll need to add this to you subscription. You can do this by uploading the CER file by browsing to "Settings" in the management portal. If you already have a cert you can just import it into your certificate store using the “import-pfxcertificate” cmdlet. Once the certificate is in your store you need to save it to a variable for use later. Go to the Azure portal and get your Subscription ID. Set “MySubId” to that value. The subscription name can be anything really. Your storage account name is also in the Azure portal. Go to storage an you will see one or more accounts depending on how you’re setup. Grab the name of the one you want and use it as the value of “myStorageSubscription” variable. The last two commands are where the magic happens… “Set-AzureSubscription” creates the subscription on your machine. The “Select-AzureSubscription” makes it active. You can have multiple subscriptions!</p>
+<p>Now just run “get-azurevm” and you should see a list of VMs you have running.</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

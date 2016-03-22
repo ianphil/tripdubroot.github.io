@@ -5,152 +5,612 @@
     <atom:link href="http://tripdubroot.com/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://tripdubroot.com/</link>
     <description>To us, and those like us...</description>
-    <pubDate>Sat, 12 Mar 2016 09:22:17 -0500</pubDate>
+    <pubDate>Wed, 16 Mar 2016 07:52:26 -0400</pubDate>
     
       <item>
-        <title>My Kids b Cra Cra</title>
-        <link>http://tripdubroot.com/2016/03/12/kids-b-cra-cra.html</link>
-        <guid isPermaLink="true">http://tripdubroot.com/2016/03/12/kids-b-cra-cra.html</guid>
-        <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
-
-&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Pygments by default.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \int \frac{2x^2+4x+6}{x-2}&lt;/script&gt;
+        <title>Azure does Open Source Amigo</title>
+        <link>http://tripdubroot.com/2016/03/15/open-source-azure.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/2016/03/15/open-source-azure.html</guid>
+        <description>&lt;p&gt;That’s right mf, Azure do it like you want it.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 12 Mar 2016 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 15 Mar 2016 08:48:00 -0400</pubDate>
       </item>
     
       <item>
-        <title>Sample post</title>
-        <link>http://tripdubroot.com/2014/11/30/sample-post.html</link>
-        <guid isPermaLink="true">http://tripdubroot.com/2014/11/30/sample-post.html</guid>
-        <description>&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
-
+        <title>Azure Storage Data Movement Uploader in Five Commits</title>
+        <link>http://tripdubroot.com/azure/development/2016/01/11/azure-storage-data-movement-uploader-in-five-commits.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/development/2016/01/11/azure-storage-data-movement-uploader-in-five-commits.html</guid>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/filecopy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I have two goals: &lt;strong&gt;Learn more about Git&lt;/strong&gt; and&lt;strong&gt; learn about DMLib&lt;/strong&gt;. &lt;strong&gt;Azure Storage Data Movement Library&lt;/strong&gt; (DMLib) has the same performance and exposes the core functionalities of AzCopy and this is an awesome super(ficial) review of one of its methods. It’s not that in-depth, but it does a good job of checking just beneath the hood.  I’m going to try to use commits and branches to tell the story, the real goal of this post. This is a simple example to start out, but if you like this method of storytelling using Git, or if you don’t, leave a comment!&lt;/p&gt;
+&lt;p&gt;On January 7th, Microsoft posted to the Azure Blog that there is a new release of DMLib and it &lt;strong&gt;rev’ed to 0.2.0&lt;/strong&gt;. Lot’s of work went into giving us the &lt;strong&gt;ability to move directories around&lt;/strong&gt;: up to Azure, around in Azure, you get the idea. I’ve played a lot with AzCopy, on which this particular set of classes is based. I’ve not played at all with DMLib, but it’s a big deal, so let’s have a look.&lt;/p&gt;
+&lt;p&gt;We have a repository to work from hosted at: &lt;a title=&quot;https://github.com/devdash/AzureStorageDataMovementTester&quot; href=&quot;http://ianp.co/1kZ0qoG&quot;&gt;https://github.com/devdash/AzureStorageDataMovementTester&lt;/a&gt;. I want you to first focus on the branches, there are four: ParallelOps, ProgressManager, SvcPointMgr, and of course master. We’ll follow the Branches and commits in this order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Master&lt;/li&gt;
+&lt;li&gt;ProgressManager&lt;/li&gt;
+&lt;li&gt;ParallelOps&lt;/li&gt;
+&lt;li&gt;SvcPointMgr&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let’s take a step back and have a look at the &lt;a href=&quot;http://ianp.co/1kZ1rNr&quot;&gt;documentation&lt;/a&gt; for DMLib, the reasons for these branches will become apparent. The docs have you Upload a blob. This upload creates a progress tracker and configures parallel operations. There is a best practice section in the docs that talks about increasing the HTTP connections limit using the ServicePointManager class. Now have a look at the commits for the “last” branch…&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://devian.co/wp-content/uploads/2016/01/image.png&quot;&gt;&lt;img style=&quot;background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;&quot; title=&quot;image&quot; src=&quot;/assets/image_thumb.png&quot; alt=&quot;image&quot; width=&quot;610&quot; height=&quot;389&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you see, the &lt;strong&gt;commits/branches mirror the examples the documentation&lt;/strong&gt; gives us. It also let’s us switch between different configurations of the uploader, so that we can test the functionality of what each piece of code adds. Cool! I think this is a neat way of using Git, not just for keeping code safe, but also as a learning tool.&lt;/p&gt;
+&lt;p&gt;Enough of the Git horse play, let us look at the code! The “Initial Commit” is nothing more than GitHub creating the repo, so we’ll skip over that and only four commits left. Starting with the master branch I simply added the project with a bit of bits already laid down. This code will &lt;strong&gt;take a ZIP file&lt;/strong&gt; found in the project and &lt;strong&gt;upload it to blob storage&lt;/strong&gt;. We will use the app.config file and drop the connection string in, hit F5 and it uploads the file. It then pauses and waits for you to verify everything has worked as expected. If it has you can the hit any key and it will clean up all the changes it just made to you storage account and close. Simple.&lt;/p&gt;
+&lt;h1&gt;The Code that Does the Dang Thing&lt;/h1&gt;
+&lt;p&gt;From the &lt;strong&gt;Master&lt;/strong&gt; Branch:&lt;/p&gt;
+&lt;p&gt;[code lang=&quot;csharp&quot;]&lt;/p&gt;
+&lt;p&gt;private static async Task BlobUploadTest()&lt;br /&gt;
+        {&lt;br /&gt;
+            string sourceFilename = &amp;quot;Downloads.zip&amp;quot;;&lt;br /&gt;
+            string destinationFilename = &amp;quot;Downloads_blockblob.zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);&lt;br /&gt;
+            UploadOptions options = new UploadOptions();&lt;br /&gt;
+            options.ContentType = &amp;quot;application/zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            try&lt;br /&gt;
+            {&lt;br /&gt;
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, null);&lt;br /&gt;
+            }&lt;br /&gt;
+            catch (Exception ex)&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(ex.Message);&lt;br /&gt;
+            }&lt;/p&gt;
+&lt;p&gt;            Console.WriteLine(&amp;quot;File {0} is uploaded to {1} successfully.&amp;quot;, sourceFilename, destinationBlob.Uri.ToString());&lt;br /&gt;
+        }&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This code first calls the &lt;em&gt;GetCloudBlob&lt;/em&gt; method that uses the standard &lt;a href=&quot;http://ianp.co/1VZOMr5&quot;&gt;Azure Storage SDK&lt;/a&gt; to create a container in your storage account. I’m not going to go into detail about that. The next part we just set the content type for file we are uploading. These are just standard &lt;a href=&quot;http://ianp.co/1W05y9y&quot;&gt;MIME types&lt;/a&gt;. Finally, we move on to the actual upload. Here we use the aptly named static method &lt;em&gt;UploadAsync &lt;/em&gt;that is hung off the class &lt;em&gt;TransferManager&lt;/em&gt;. It takes three parameters: Source File, Destination Blob, Options, and Transfer context. The Transfer context for now is null. It does what you think, uploads a file to blob storage. Press F5 to run this bit of code, it does do much but before you press any key, which deletes everything we just did from Azure, have a look at the blobs in your storage account, do you see a new container? A new file? It took me &lt;strong&gt;15784 milliseconds&lt;/strong&gt; to upload the file…&lt;/p&gt;
+&lt;h1&gt;But I want Progress Tracking&lt;/h1&gt;
+&lt;p&gt;From the &lt;strong&gt;ProgressManager&lt;/strong&gt; Branch:&lt;/p&gt;
+&lt;p&gt;[code lang=&quot;csharp&quot;]&lt;/p&gt;
+&lt;p&gt;private static async Task BlobUploadTest()&lt;br /&gt;
+        {&lt;br /&gt;
+            string sourceFilename = &amp;quot;Downloads.zip&amp;quot;;&lt;br /&gt;
+            string destinationFilename = &amp;quot;Downloads_blockblob.zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);&lt;br /&gt;
+            UploadOptions options = new UploadOptions();&lt;br /&gt;
+            options.ContentType = &amp;quot;application/zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            TransferContext context = new TransferContext();&lt;br /&gt;
+            context.ProgressHandler = new Progress&amp;lt;TransferProgress&amp;gt;((progress) =&amp;gt;&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(&amp;quot;Bytes Uploaded: {0}&amp;quot;, progress.BytesTransferred);&lt;br /&gt;
+            });&lt;/p&gt;
+&lt;p&gt;            try&lt;br /&gt;
+            {&lt;br /&gt;
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);&lt;br /&gt;
+            }&lt;br /&gt;
+            catch (Exception ex)&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(ex.Message);&lt;br /&gt;
+            }&lt;/p&gt;
+&lt;p&gt;            Console.WriteLine(&amp;quot;File {0} is uploaded to {1} successfully.&amp;quot;, sourceFilename, destinationBlob.Uri.ToString());&lt;br /&gt;
+        }&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This code news up the transfer context. Then news up the &lt;em&gt;Progress&lt;/em&gt; generic class with type &lt;em&gt;TransferProgress &lt;/em&gt;and passes a delegate as a parameter to the constructor. The &lt;em&gt;Progress&lt;/em&gt; class hangs off the &lt;em&gt;ProgressHandler&lt;/em&gt;  on the aforementioned context. Basically it will write to the console how many bytes have been transferred. Which is a great opportunity to do welcomed binary maths. We also update the &lt;em&gt;UploadAsync&lt;/em&gt; method to include the TransferContext. Now when run you will see the byte count being uploaded. Everything else work the same. It took me &lt;strong&gt;18458 milliseconds&lt;/strong&gt; to upload the file…&lt;/p&gt;
+&lt;h1&gt;Now Do It in Parallel&lt;/h1&gt;
+&lt;p&gt;From the &lt;strong&gt;ParallelOps&lt;/strong&gt; Branch:&lt;/p&gt;
+&lt;p&gt;[code lang=&quot;csharp&quot;]&lt;/p&gt;
+&lt;p&gt;private static async Task BlobUploadTest()&lt;br /&gt;
+        {&lt;br /&gt;
+            string sourceFilename = &amp;quot;Downloads.zip&amp;quot;;&lt;br /&gt;
+            string destinationFilename = &amp;quot;Downloads_blockblob.zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);&lt;br /&gt;
+            UploadOptions options = new UploadOptions();&lt;br /&gt;
+            options.ContentType = &amp;quot;application/zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            TransferManager.Configurations.ParallelOperations = 64;&lt;/p&gt;
+&lt;p&gt;            TransferContext context = new TransferContext();&lt;br /&gt;
+            context.ProgressHandler = new Progress&amp;lt;TransferProgress&amp;gt;((progress) =&amp;gt;&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(&amp;quot;Bytes Uploaded: {0}&amp;quot;, progress.BytesTransferred);&lt;br /&gt;
+            });&lt;/p&gt;
+&lt;p&gt;            try&lt;br /&gt;
+            {&lt;br /&gt;
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);&lt;br /&gt;
+            }&lt;br /&gt;
+            catch (Exception ex)&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(ex.Message);&lt;br /&gt;
+            }&lt;/p&gt;
+&lt;p&gt;            Console.WriteLine(&amp;quot;File {0} is uploaded to {1} successfully.&amp;quot;, sourceFilename, destinationBlob.Uri.ToString());&lt;br /&gt;
+        }&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This code is one line and sets the ParallelOperations to 64. This should decrease the time to upload. Previous test was 18458 milliseconds and mine ran this time in &lt;strong&gt;16042 milliseconds&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1&gt;Best Practice: Set the HTTP Connection Limit&lt;/h1&gt;
+&lt;p&gt;From the &lt;strong&gt;SvcPointMgr&lt;/strong&gt; Branch:&lt;/p&gt;
+&lt;p&gt;[code lang=&quot;csharp&quot;]&lt;/p&gt;
+&lt;p&gt;private static async Task BlobUploadTest()&lt;br /&gt;
+        {&lt;br /&gt;
+            string sourceFilename = &amp;quot;Downloads.zip&amp;quot;;&lt;br /&gt;
+            string destinationFilename = &amp;quot;Downloads_blockblob.zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);&lt;br /&gt;
+            UploadOptions options = new UploadOptions();&lt;br /&gt;
+            options.ContentType = &amp;quot;application/zip&amp;quot;;&lt;/p&gt;
+&lt;p&gt;            ServicePointManager.DefaultConnectionLimit = Environment.ProcessorCount * 8;&lt;br /&gt;
+            TransferManager.Configurations.ParallelOperations = 64;&lt;/p&gt;
+&lt;p&gt;            TransferContext context = new TransferContext();&lt;br /&gt;
+            context.ProgressHandler = new Progress&amp;lt;TransferProgress&amp;gt;((progress) =&amp;gt;&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(&amp;quot;Bytes Uploaded: {0}&amp;quot;, progress.BytesTransferred);&lt;br /&gt;
+            });&lt;/p&gt;
+&lt;p&gt;            try&lt;br /&gt;
+            {&lt;br /&gt;
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);&lt;br /&gt;
+            }&lt;br /&gt;
+            catch (Exception ex)&lt;br /&gt;
+            {&lt;br /&gt;
+                Console.WriteLine(ex.Message);&lt;br /&gt;
+            }&lt;/p&gt;
+&lt;p&gt;            Console.WriteLine(&amp;quot;File {0} is uploaded to {1} successfully.&amp;quot;, sourceFilename, destinationBlob.Uri.ToString());&lt;br /&gt;
+        }&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This code is also a one liner and sets the DefaultConnectionLimit of the ServicePoint Object (ServicePointManager Class) to 8 times the processor count. Per the documentation this is one of the learnings from the folks behind AzCopy. My upload time is now &lt;strong&gt;15863 milliseconds&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;This post lays out a simple file upload to Azure Blob storage using the Azure Storage Data Movement Library. Since it pulls from the learnings and code behind AzCopy you should take it seriously. Spend some time with the samples and start &lt;strong&gt;planning&lt;/strong&gt; for this library in your applications.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 11 Jan 2016 18:44:43 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>The Azure $25 Dollar Challenge</title>
+        <link>http://tripdubroot.com/azure/2015/11/18/the-azure-25-dollar-challenge.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/2015/11/18/the-azure-25-dollar-challenge.html</guid>
+        <description>&lt;p&gt;With today&#39;s announcement about Visual Studio Dev Essentials I asked, &lt;strong&gt;what can you run for $25 in Azure?&lt;/strong&gt; Here&#39;s my list:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Service&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Cluster&lt;/th&gt;
+&lt;th&gt;Tier&lt;/th&gt;
+&lt;th&gt;Instance Size&lt;/th&gt;
+&lt;th&gt;Instance Count&lt;/th&gt;
+&lt;th&gt;Hours&lt;/th&gt;
+&lt;th&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;http://ianp.co/1M3Uqo2&quot;&gt;App Service&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Free&lt;/td&gt;
+&lt;td&gt;F1&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;Free&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;http://ianp.co/1M3Uhkv&quot;&gt;Azure ML&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Free&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;10GB Data Set, Stage API&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;Free&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;App Service&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Shared&lt;/td&gt;
+&lt;td&gt;D1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;19.34&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DocumentDB&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;S1&lt;/td&gt;
+&lt;td&gt;1 Collection&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;25.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HDInsight&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;Hadoop&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;A3&lt;/td&gt;
+&lt;td&gt;2 Head, 2 Worker Nodes&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;24.96&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQL Database&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Single Database&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;S0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;15.03&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQL Database&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Single Database&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Basic&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;24.92&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Storage&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Block Blob&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Basic&lt;/td&gt;
+&lt;td&gt;LRS&lt;/td&gt;
+&lt;td&gt;1000GB, 250 Trans Units&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;24.90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Windows/Linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;A0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;744&lt;/td&gt;
+&lt;td&gt;14.88&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Windows/Linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;A3&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;69&lt;/td&gt;
+&lt;td&gt;24.84&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;D2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;85&lt;/td&gt;
+&lt;td&gt;23.80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;D2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;td&gt;24.64&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Windows/Linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;D11&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;23.76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMs&lt;/td&gt;
+&lt;td&gt;East US&lt;/td&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Standard&lt;/td&gt;
+&lt;td&gt;D11&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;23.40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Here are a couple of the highlights from this list...&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Donec a diam lectus&lt;/li&gt;
-  &lt;li&gt;Sed sit amet ipsum mauris&lt;/li&gt;
+&lt;li&gt;I was surprised by the free tier for Azure ML. It looks like you can build, train, and test pretty complex algorithms without a credit card.&lt;/li&gt;
+&lt;li&gt;You can run a pretty beefy HDInsight cluster for near a week!&lt;/li&gt;
+&lt;li&gt;While not &quot;really&quot; listed here, you can run a Basic Azure SQL database for 5 bucks... it&#39;s only 2GB, still not bad.&lt;/li&gt;
+&lt;li&gt;You can run a D2 Windows box for more than two weeks.&lt;/li&gt;
+&lt;li&gt;Five Linux D11 boxes for a full day.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.&lt;/p&gt;
-
-&lt;p&gt;Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula &lt;em&gt;semper consectetur sagittis&lt;/em&gt;, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.&lt;/p&gt;
-
-&lt;p&gt;Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.&lt;/p&gt;
-
-&lt;p&gt;Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.&lt;/p&gt;
+&lt;p&gt;Hopefully this paints a pretty clear picture, that $25 dollars a month can go a long way.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 18 Nov 2015 15:00:21 -0500</pubDate>
       </item>
     
       <item>
-        <title>Feature images</title>
-        <link>http://tripdubroot.com/2014/11/29/feature-images.html</link>
-        <guid isPermaLink="true">http://tripdubroot.com/2014/11/29/feature-images.html</guid>
-        <description>&lt;p&gt;This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Nov 2014 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>Markdown and HTML</title>
-        <link>http://tripdubroot.com/2014/11/28/markdown-and-html.html</link>
-        <guid isPermaLink="true">http://tripdubroot.com/2014/11/28/markdown-and-html.html</guid>
-        <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
-
-&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+        <title>Tech404 - Atlanta&#39;s Slack Community</title>
+        <link>http://tripdubroot.com/community/development/productivity/2015/11/14/tech404-atlantas-slack-community.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/community/development/productivity/2015/11/14/tech404-atlantas-slack-community.html</guid>
+        <description>&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; width=&quot;750&quot; border=&quot;0&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign=&quot;top&quot; width=&quot;375&quot;&gt;&lt;a href=&quot;http://devian.co/wp-content/uploads/2015/11/IMG_0785.png&quot;&gt;&lt;img style=&quot;border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: left; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px&quot; border=&quot;0&quot; alt=&quot;&quot; src=&quot;/assets/IMG_0785.png&quot; width=&quot;320&quot; align=&quot;left&quot; height=&quot;569&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td valign=&quot;top&quot; width=&quot;375&quot;&gt;
+&lt;p&gt;Community is important to me.&lt;/p&gt;
+&lt;p&gt;Community is important to Microsoft and to many other people and businesses. If it&#39;s important to you and you&#39;re in the Atlanta area you should checkout &lt;a href=&quot;http://tech404.io&quot;&gt;Tech404&lt;/a&gt;.&amp;nbsp; This is the sign up link. It&#39;ll take you to a page where you put in your email. You&#39;ll then receive a confirmation in your inbox. That email contains a link to the Slack sign up page where you&#39;ll enter user info like email and password. &lt;/p&gt;
+&lt;p&gt;A word about slack: awesomeness. A few more: Slack is a communication tool for teams of people. There are a lot extensions called &lt;a href=&quot;https://slack.com/integrations&quot;&gt;integrations&lt;/a&gt;, many of which are developer focused. There is also &lt;a href=&quot;https://slack.com/downloads&quot;&gt;clients&lt;/a&gt; for all platforms that you can download or install from the various stores. Lastly, there is an extensive &lt;a href=&quot;https://api.slack.com&quot;&gt;API&lt;/a&gt; to bend the service to your will...&lt;/p&gt;
+&lt;p&gt;So if you&#39;re in the ATL, you work with tech like JavaScript or Azure or Docker, and you want to work with some of the best Atlanta has to offer... Signup and join the conversation. &lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Pygments by default.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \int \frac{2x^2+4x+6}{x-2}&lt;/script&gt;
 </description>
-        <pubDate>Fri, 28 Nov 2014 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 14 Nov 2015 14:56:28 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>The Azure Rest API, or Rather Resource Management API</title>
+        <link>http://tripdubroot.com/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html</guid>
+        <description>&lt;p&gt;Let&#39;s start with a simple bingle search. Head over to &lt;a href=&quot;https://duckduckgo.com/&quot;&gt;duckduckgo.com&lt;/a&gt; and type in &quot;Azure REST API&quot; and hit quack...&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/search.png&quot; alt=&quot;&quot; width=&quot;781&quot; height=&quot;427&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The top hit is already leading you astray! It takes us to the Azure Service Management API (ASM). &quot;Ian, why is that not right?&quot;, you ask? Well to be fair it&#39;s not wrong... but wait we want Azure Resource Manager (ARM). It&#39;s the latest hotness.&lt;/p&gt;
+&lt;p&gt;Let me take a step back here to say, I fall off of mountain bikes regularly, it&#39;s my excuse.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/scott-scale-29er-2010-mountain-bike.jpg&quot; alt=&quot;&quot; width=&quot;600&quot; height=&quot;356&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Dear Katniss Everdeen...&lt;/p&gt;
+&lt;p&gt;uhh, back to Azure.&lt;/p&gt;
+&lt;p&gt;ASM is like?.. Well my 2009 Pathfinder. It&#39;s trusty, and gets me to and fro, but doesn&#39;t have all the latest bells and whistles (Bluetooth!!!).  ARM is like?.. I want to say a Tesla, but that may be a little much. A NEW PATHFINDER! ha that would probably have Bluetooth.&lt;/p&gt;
+&lt;p&gt;ARM is where you should be focusing. Instead of crafting an ASM based URL with a POST method that looks something like:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;https://management.core.windows.net//services/hostedservices//deployments&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With a body full of XML &amp;lt;digital shiver /&amp;gt;. The 90&#39;s called wanting their code back... You should instead, create an ARM PUT that looks something like:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?validating={true|false}&amp;amp;api-version={api-version}&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/azure/mt163591.aspx&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With a body full of Crockford approved, JSON.&lt;/p&gt;
+&lt;p&gt;Now, there are plenty of tools to help you craft this JSON, so don&#39;t fret much. Check out this (shameless plug) awesome &lt;a href=&quot;https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros&quot;&gt;video &lt;/a&gt;about how to use Visual Studio to do just that.&lt;/p&gt;
+&lt;p&gt;Trust me, I&#39;m a &lt;a href=&quot;http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg&quot;&gt;professional&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Nov 2015 10:00:22 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>Deploy to Azure Resource Groups using the SDK</title>
+        <link>http://tripdubroot.com/azure/development/devops/2015/10/31/deploy-to-azure-resource-groups-using-the-sdk.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/development/devops/2015/10/31/deploy-to-azure-resource-groups-using-the-sdk.html</guid>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/image_8.png&quot; alt=&quot;&quot; width=&quot;750&quot; height=&quot;421&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Authentication&lt;/h1&gt;
+&lt;p&gt;Start by adding the ADAL nuget package.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Then add this file to your project:&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/devdash/8f9e65b038ef5254e1fd.js&quot;&gt;&lt;/script&gt;The first line of code in your app will be… &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;em&gt;&lt;strong&gt;string token = AuthHelper.GetAuthorizationHeader();
+&lt;/strong&gt;&lt;/em&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That’s it for authentication!   &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Setup the Resource Management Client&lt;/h1&gt;
+&lt;p&gt;Start by adding the Azure Resource Management NuGet package. &lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Install-Package Microsoft.Azure.Management.Resources&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Then drop this code into your program:&lt;script src=&quot;https://gist.github.com/devdash/ee0687985c4ab077c304.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;This will give you a client to make requests and create assets using the Azure Resource Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Create a Resource Group&lt;/h1&gt;
+&lt;p&gt;Next we need to create Resource Group to deploy into. Use this code with the client you just created above.&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/devdash/7d20b347b70fb578078e.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h1&gt;Create a Resource Deployment&lt;/h1&gt;
+&lt;p&gt;Lastly let’s deploy an Azure Resource Template. First I committed a &lt;a href=&quot;https://github.com/devdash/testdeployments&quot; target=&quot;_blank&quot;&gt;template and parameter file to GitHub&lt;/a&gt;. They just deploy a simple website. I then create a deployment and set the deployment properties to contain the RAW link to those files. Finally I call &lt;em&gt;&lt;strong&gt;CreateOrUpdateAsync&lt;/strong&gt; &lt;/em&gt;method an pass all the appropriate parameters. Here’s the code:&lt;script src=&quot;https://gist.github.com/devdash/fd2c267f25cb0e20eeb8.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 31 Oct 2015 17:44:54 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>SHH, Windows will Support OpenSSH</title>
+        <link>http://tripdubroot.com/administration/devops/windows%20client/windows%20server/2015/10/27/shh-windows-will-support-openssh-who-is-this-microsoft.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/administration/devops/windows%20client/windows%20server/2015/10/27/shh-windows-will-support-openssh-who-is-this-microsoft.html</guid>
+        <description>&lt;p&gt;Microsoft loves Linux.&lt;/p&gt;
+&lt;p&gt;Who is this Microsoft? and what did you do to telnet?.. Gopher must&#39;ve ate it. Open Source for life!&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/ice-cube-net-worth.jpg&quot; alt=&quot;&quot; width=&quot;1440&quot; height=&quot;823&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Those fellows who work on PowerShell must be crazy! Who&#39;d want port 22 open on a Windows box?&lt;/p&gt;
+&lt;p&gt;Me.&lt;/p&gt;
+&lt;p&gt;No more nc.exe bro dawg! Captn_Jack and his fellow RedHat wearing brethren can finally manage Windows and Linux over thy administrator controlled port.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/pirates-of-the-caribbean-curse-of-the-black-pearl-2003-03.png&quot; alt=&quot;&quot; width=&quot;500&quot; height=&quot;281&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Supercilious really...&lt;/p&gt;
+&lt;p&gt;But why is SSH coming? I mean it&#39;s only 30 years in the making...&lt;/p&gt;
+&lt;p&gt;Well &lt;a href=&quot;http://blogs.msdn.com/b/powershell/archive/2015/06/03/looking-forward-microsoft-support-for-secure-shell-ssh.aspx&quot;&gt;here &lt;/a&gt;is what the PowerShell Team has to say:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Finally, I&#39;d like to share some background on today’s announcement, because this is the 3rd time the PowerShell team has attempted to support SSH.  The first attempts were during PowerShell V1 and V2 and were rejected.  &lt;strong&gt;Given our changes in leadership and culture, we decided to give it another try and this time, because we are able to show the clear and compelling customer value, the company is very supportive.&lt;/strong&gt;  So I want to take a minute and thank all of you in the community who have been clearly and articulately making the case for why and how we should support SSH!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Emphasis put on the key point.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/PowerShell/Win32-OpenSSH/wiki/Deploy-Win32-OpenSSH&quot;&gt;Install it NOW!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Trust me, I&#39;m a &lt;a href=&quot;http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg&quot;&gt;professional&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Oct 2015 10:00:21 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Azure Logic Apps: Twitter to Blob Storage</title>
+        <link>http://tripdubroot.com/2015/10/14/azure-logic-apps-twitter-to-blob-storage.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/2015/10/14/azure-logic-apps-twitter-to-blob-storage.html</guid>
+        <description>&lt;p&gt;&lt;iframe src=&quot;https://channel9.msdn.com/Blogs/devian/Logic-Apps-Twitter-to-Azure-Blob-Storage/player&quot; width=&quot;512&quot; height=&quot;384&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;In this episode I create a Logic App that uses the Twitter and Blob storage connectors.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Oct 2015 14:00:38 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Windows 10 - Show/Hide Icons in the Notification Area</title>
+        <link>http://tripdubroot.com/administration/productivity/windows%20client/2015/10/12/windows-10-showhide-icons-in-the-notification-area.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/administration/productivity/windows%20client/2015/10/12/windows-10-showhide-icons-in-the-notification-area.html</guid>
+        <description>&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/DyRvw.gif?c=desktop&amp;amp;p=popkey&amp;amp;i=mrw-reactions&amp;amp;l=featured&amp;amp;f=.gif&quot; alt=&quot;Erkle&quot; width=&quot;290&quot; height=&quot;172&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Why is this hard? All I want to do is decide what icons are shown and what icons are hidden in the notification area of Windows 10... Let the red arrow show you where I mean.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://devian.co/wp-content/uploads/2015/10/tbarsmall.png&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-2049&quot; src=&quot;/assets/tbarsmall.png&quot; alt=&quot;tbarsmall&quot; width=&quot;774&quot; height=&quot;39&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Soo..... How do you do it?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hit the &quot;Windows&quot; key.&lt;/li&gt;
+&lt;li&gt;Type: Notification&lt;/li&gt;
+&lt;li&gt;Select: Notifications and action settings&lt;/li&gt;
+&lt;li&gt;Choose: Select which icons appear on the taskbar&lt;/li&gt;
+&lt;li&gt;Flip the slider on what you want shown or hidden&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://devian.co/wp-content/uploads/2015/10/notification.gif&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-2050&quot; src=&quot;/assets/notification.gif&quot; alt=&quot;notification&quot; width=&quot;600&quot; height=&quot;337&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That&#39;s it! awesome...&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/QLOMV.gif?c=desktop&amp;amp;p=popkey&amp;amp;i=mrw-reactions&amp;amp;l=featured&amp;amp;f=.gif&quot; alt=&quot;&quot; width=&quot;620&quot; height=&quot;349&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 12 Oct 2015 10:00:53 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>YouTube&#39;s Live Streaming, and the Time it Just Stole from Me!</title>
+        <link>http://tripdubroot.com/wams/2015/10/05/youtubes-live-streaming-and-the-time-it-just-stole-from-me.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/wams/2015/10/05/youtubes-live-streaming-and-the-time-it-just-stole-from-me.html</guid>
+        <description>&lt;p&gt;&lt;img class=&quot;aligncenter&quot; src=&quot;/assets/offlinevid.gif&quot; alt=&quot;Offline Video GIF&quot; width=&quot;636&quot; height=&quot;356&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I haven&#39;t posted in a while. Shame shame shame... Today I am writing to you about YouTube&#39;s live streaming service. I was checking out the &lt;a href=&quot;https://live.asp.net/&quot;&gt;Asp.Net weekly stand-up&lt;/a&gt; and noticed, it&#39;s what they use. I went off to investigate and realized it&#39;s really simple to setup.&lt;/p&gt;
+&lt;p&gt;Navigate off to &lt;a href=&quot;https://www.youtube.com/live_dashboard&quot;&gt;https://www.youtube.com/live_dashboard&lt;/a&gt; and agree to the terms. You&#39;ll notice then that there is a &quot;Stream Now&quot; link. Click that...&lt;/p&gt;
+&lt;p&gt;Off on the right conveniently located near the video player is a checklist. This checklist walks you through setting up an encoder and hooking it up to YouTube.&lt;/p&gt;
+&lt;p&gt;I went with Wirecast, because I have a copy. I&#39;d recommend downloading &lt;a href=&quot;http://www.telestream.net/wirecastplay/landing.htm&quot;&gt;Wirecast Play&lt;/a&gt; free. It&#39;s a pretty awesome tool and will authenticate with your YouTube account. Then click stream...&lt;/p&gt;
+&lt;p&gt;As a person with close ties and invested interest in &lt;a href=&quot;https://azure.microsoft.com/en-us/services/media-services/&quot;&gt;Azure Media Services&lt;/a&gt;, we need something this easy, this free, and this without the need for an &lt;a href=&quot;https://go.microsoft.com/fwlink/p/?LinkID=510935&amp;amp;culture=en-US&amp;amp;country=US&quot;&gt;Office365 subscription&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Maybe I&#39;ll setup a reoccurring live stream for us folks in the ATL... hmmm.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 05 Oct 2015 10:30:47 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>AzureCon Followup and Announcements</title>
+        <link>http://tripdubroot.com/azure/2015/09/30/azurecon-followup-and-announcements.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/2015/09/30/azurecon-followup-and-announcements.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;https://twitter.com/ianphilpot/status/648913282192044032&quot;&gt;&lt;img class=&quot;aligncenter&quot; src=&quot;/assets/AzureCon.png&quot; alt=&quot;AzureCon&quot; width=&quot;574&quot; height=&quot;387&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yesterday was &lt;a href=&quot;https://azure.microsoft.com/en-us/azurecon/&quot;&gt;AzureCon 2015&lt;/a&gt;, and it was chalk full of goodness. I sat for all four of the Keynotes and live tweeted (or whatever it&#39;s called). I had a great time, but it was ball busting work. A side affect of doing that was, I feel really informed. I also got a few new followers and lot&#39;s of retweets... Awesome and thanks!&lt;/p&gt;
+&lt;p&gt;The keynotes are posted in their full 1080 glory. All of the sessions are on demand, so spend 30 minutes and watch one. Hey spend the whole day and watch more than one... Here are a few that caught my eye, in no particular order:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ianp.co/1hajbDB&quot;&gt;Live event streaming and employee video portals: how video is changing the way we work and collaborate - 21:05&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ianp.co/1hajqyB&quot;&gt;New Azure Security Center helps you prevent, detect, and respond to threats - 21:48&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ianp.co/1hajBtH&quot;&gt;Windows Server containers, Docker, and an introduction to Azure Container Service -34:35&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ianp.co/1hajNJf&quot;&gt;Introducing Azure DevTest Lab - 19:41&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, don&#39;t forget the &lt;a href=&quot;http://ianp.co/1hak3rN&quot;&gt;AzureCon Challenge&lt;/a&gt;. Free. Labs. Prizes. Awesome.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;alignnone&quot; src=&quot;/assets/CQJ6VoHWIAA6bTk.png:large&quot; alt=&quot;&quot; width=&quot;451&quot; height=&quot;233&quot; /&gt;&lt;/p&gt;
+&lt;h1&gt;Announcements&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;App Service
+&lt;ol&gt;
+&lt;li&gt;App Service Environment is now generally available with a fully backed SLA. App Service Environment provides a fully isolated and dedicated environment for securely running all of your apps in addition to enabling more scaling options for Web Apps, Mobile Apps, API Apps and Logic Apps.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure CDN
+&lt;ol&gt;
+&lt;li&gt;A strategic partnership with Akamai which will enable integration of Akamai’s industry-leading CDN capabilities into Azure. This dramatically expands Azure CDN’s capabilities, scale and geographic reach. Public sector customers will have convenient access as both platforms have achieved the FedRAMP JAB’s highest certification.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Mobile Engagment
+&lt;ol&gt;
+&lt;li&gt;The general availability of Azure Mobile Engagement, which enables user segmentation, app user analytics, and contextually-aware smart push notifications and in-app messaging across devices to maximize app usage, retention and monetization.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Media Services
+&lt;ol&gt;
+&lt;li&gt;The general availability of Live Encoding for Azure Media Services. Live Encoding enables the delivery of high quality video, under a variety of network conditions, to every device for the live streaming of events. Live Encoding is the same technology that powered the digital coverage of some of the largest events on the planet such as Super Bowl XLIX and 2014 Winter Olympics.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure SQL Data Warehouse
+&lt;ol&gt;
+&lt;li&gt;Azure SQL Data Warehouse, including recently released Power BI integration, is now broadly available for public preview. Azure SQL Data Warehouse is a new, first-of-its-kind elastic data warehouse in the cloud. It’s the first enterprise-class cloud data warehouse that can dynamically grow, shrink and pause compute in seconds independent of storage, enabling you to pay for the query performance you need, when you need it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;ExpressRoute
+&lt;ol&gt;
+&lt;li&gt;The general availability of ExpressRoute for O365 and Skype for Business, as well as the ability to connect to Microsoft Azure’s Government Cloud via ExpressRoute. With ExpressRoute for Office 365, customers can access Office 365&lt;/li&gt;
+&lt;li&gt;New pricing plans for ExpressRoute. Effective Oct 1st 2015, customers will have two different data plans for their ExpressRoute connections. Relative to the prior model where pricing plans were tied to the service provider, these plans provide more flexibility in choosing the right plan based on your data usage. For more details, refer here.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;New VM Families and Pricing
+&lt;ol&gt;
+&lt;li&gt;The general availability of DV2, our next generation of D-series Virtual Machine instances. DV2 instances can be used as Virtual Machines or Cloud Services. DV2 instances are based on a customized 2.4 GHz Intel Xeon® E5 v3 (Haswell) processors, and with Intel Turbo Boost Technology 2.0 can go to 3.2 GHz, making DV2 up to 35% faster than the current D-series instances. Dv2-series and D-series are ideal for enterprise-grade applications that demand faster CPUs, better local disk performance, or higher memories.&lt;/li&gt;
+&lt;li&gt;Price reductions on A8-A11 Instances. As part of our commitment to save you costs whenever we can, we’re reducing prices of A8, A9, A10 and A11 instances by as much as 60%. These instances carry the powerful Intel Xeon E5 processors and are suitable for compute intensive workloads like high-performance clusters, modeling and simulations, video encoding, and other compute or network intensive scenarios. The new prices will be effective October 1st, 2015. Please visit the Virtual machines pricing page for pricing details.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure File Stroage
+&lt;ol&gt;
+&lt;li&gt;The general availability of Azure File Storage. Azure File Storage is a highly available and geo-replicated managed file share at low cost. Via the widely-used SMB 3.0 protocol, it enables customers to have persistent and secure connections with applications both on-premises and in the cloud.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Backup
+&lt;ol&gt;
+&lt;li&gt;The general availability of Azure Backup of application workloads. Included as part of Microsoft Operations Management Suite, Azure Backup now supports direct backup of SQL Server, SharePoint, and Microsoft Dynamics&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Resource Health
+&lt;ol&gt;
+&lt;li&gt;Upcoming availability of Azure Resource Health, a new service that exposes the health of each of Azure resources such as Virtual Machines, websites and SQL Databases to help customers quickly identify the root cause of a problem. Based on the root cause, it provides actionable guidance and tooling to solve issues, including the option to submit a support ticket. Azure Resource health will be available for public preview in October.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Finacial Services Compliance Program
+&lt;ol&gt;
+&lt;li&gt;Announcement of the Financial Services Compliance Program. We know the financial industry has more regulatory oversight than most other industries. To make it easier for our customers to adopt Azure, we’re excited to offer a new compliance program aligned to global financial regulatory oversight and risk management requirements. As part of the program, customers will get access to audit report evidence as well as platform penetration test results.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ref: &lt;a href=&quot;http://ianp.co/1halCWK&quot;&gt;http://ianp.co/1halCWK&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Sep 2015 13:44:00 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>5 Minutes with Kibana - Overview Dashboard</title>
+        <link>http://tripdubroot.com/azure/productivity/2015/08/20/5-minutes-with-kibana-overview-dashboard.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/productivity/2015/08/20/5-minutes-with-kibana-overview-dashboard.html</guid>
+        <description>&lt;p&gt;&lt;iframe src=&quot;https://channel9.msdn.com/Blogs/devian/5-Minutes-with-Kibana-Overview-Dashboard/player&quot; width=&quot;512&quot; height=&quot;384&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;Let&#39;s create some data visualizations using Kibana. Kibana is the &quot;K&quot; in the ELK stack. The ELK stack stands for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Elastic Search&lt;/li&gt;
+&lt;li&gt;Logstash&lt;/li&gt;
+&lt;li&gt;Kibana&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have a Windows Server running in Azure that is has an instance of Elastic Search and Logstash setup. Logstash is configured to send tweets from twitter containing Microsoft Azure and Windows 10 topics to Elastic Search.&lt;/p&gt;
+&lt;p&gt;In this 5 minute short, we&#39;ll setup up an overview dashboard that gives us an idea of what people are talking about on twitter.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Aug 2015 20:34:42 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Deploying Azure Resource Manager Virtual Machines with Visual Studio for IT Pros</title>
+        <link>http://tripdubroot.com/azure/devops/powershell/2015/08/11/deploying-azure-resource-manager-virtual-machines-with-visual-studio-for-it-pros.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/azure/devops/powershell/2015/08/11/deploying-azure-resource-manager-virtual-machines-with-visual-studio-for-it-pros.html</guid>
+        <description>&lt;p&gt;While PowerShell alone is great for deploying Azure Virtual Machines, the newest innovations in Visual Studio make PowerShell plus Azure even easier! Join Tommy Patterson and I as we walk through the process of setting up Visual Studio with an Azure subscription, editing the scripts in the traditional PowerShell ISE then moving over to showing how this can be done much easier with the latest Visual Studio enhancements! The latest innovation with Azure Resource Templates plus Visual Studio make multi-machine deployments so much easier. Visual Studio is not just for developers anymore!&lt;/p&gt;
+&lt;p&gt;&lt;iframe src=&quot;https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros/player&quot; width=&quot;512&quot; height=&quot;384&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2015 15:23:54 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Wallpapers... Because Why Not?</title>
+        <link>http://tripdubroot.com/art/2015/07/20/wallpapers-because-why-not.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/art/2015/07/20/wallpapers-because-why-not.html</guid>
+        <description>&lt;p&gt;Here are a couple of wallpapers I made...&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;1920&quot;]&lt;a href=&quot;https://ianphil.blob.core.windows.net/pub/AzureDevOps.png&quot;&gt;&lt;img class=&quot;&quot; src=&quot;/assets/AzureDevOps.png&quot; alt=&quot;&quot; width=&quot;1920&quot; height=&quot;1080&quot; /&gt;&lt;/a&gt; DevOps Wallpaper 1920x1080[/caption]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;1920&quot;]&lt;a href=&quot;https://ianphil.blob.core.windows.net/pub/Microsoft_BG.png&quot;&gt;&lt;img class=&quot;&quot; src=&quot;/assets/Microsoft_BG.png&quot; alt=&quot;&quot; width=&quot;1920&quot; height=&quot;1080&quot; /&gt;&lt;/a&gt; Microsoft Wallpaper 1920x1080[/caption]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2015 09:00:02 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>New Ch9 Video: Installing Jenkins in Two Minutes...</title>
+        <link>http://tripdubroot.com/devops/2015/07/15/new-ch9-video-installing-jenkins-in-two-minutes.html</link>
+        <guid isPermaLink="true">http://tripdubroot.com/devops/2015/07/15/new-ch9-video-installing-jenkins-in-two-minutes.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;http://devian.co/wp-content/uploads/2015/07/jenkensThumb.png&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-1891&quot; src=&quot;/assets/jenkensThumb.png&quot; alt=&quot;jenkensThumb&quot; width=&quot;400&quot; height=&quot;225&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I&#39;m working through a complete setup of a DevOps tool chain and figured I&#39;d make some short videos for Ch9... Here is the first.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://channel9.msdn.com/Blogs/devian/Installing-Jenkins-in-Two-Minutes&quot; target=&quot;_blank&quot;&gt;Installing Jenkins in Two Minutes...&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Jul 2015 14:54:10 -0400</pubDate>
       </item>
     
   </channel>

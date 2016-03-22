@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Narcissism in Numbers and My New Favorite Number: 8208 | TripDubRoot</title>
+	<meta name="description" content="Sometimes maths is awesome. I've been catching up on the podcast The Infinite Monkey Cage. In one of the episodes they talk about number theory and specifica...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/math/2015/03/22/narcissism-in-numbers.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Narcissism in Numbers and My New Favorite Number: 8208</h1>
+    <p class="meta">
+    March 22, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p>Sometimes maths is awesome. I've been catching up on the podcast <a href="http://www.infinitemonkeycage.com/" target="_blank"><em>The Infinite Monkey Cage</em></a>. In one of the episodes they talk about number theory and specifically narcissistic numbers. My interest was peeked, so I had to write some quick code to prove out this theorem?? myself.</p>
+<p><strong>nar·cis·sism</strong> /ˈnärsəˌsizəm/ (noun) - excessive or erotic interest in oneself and one's physical appearance.</p>
+<p>A narcissistic number, as defined by Wikipedia <a href="http://en.wikipedia.org/wiki/Narcissistic_number" target="_blank">here</a>, as a number that is the sum of its own digits each raised to the power of the number of digits. So basically:</p>
+<p>153 = 1^3 + 5^3 + 3^3 = 153</p>
+<p>How can this not intrigue you?</p>
+<p>[code lang="powershell"]<br />
+function isNarcissisticNumber {<br />
+    param([int]$number)</p>
+<p>    # Convert numbers to an array to work with each number and get a count of intergers<br />
+    $numbers = $number.ToString().ToCharArray()</p>
+<p>    # A place to total up each individual integer<br />
+    $nar = 0</p>
+<p>    # This is where the magic happens. We get the power equal to the length of the array<br />
+    # for each of the individual intagers then get the sum of all.<br />
+    foreach($num in $numbers) {<br />
+        $num = [char]::GetNumericValue($num)<br />
+        $nar += [math]::Pow($num, $numbers.Length)<br />
+    }</p>
+<p>    # Simple check to see if the total of the individual numbers is the same as the<br />
+    # inital number.<br />
+    if ($nar -eq $number) {<br />
+        return $true<br />
+    }<br />
+    else {<br />
+        return $false<br />
+    }<br />
+}</p>
+<p>1..10000 | foreach { if ( isNarcissisticNumber $_ ) { $_ } }<br />
+[/code]</p>
+<p>The output will look like this:</p>
+<p><a href="http://adminian.com/wp-content/uploads/2015/03/narcissisticnumbers.png"><img class="alignnone size-medium wp-image-1071" src="/assets/narcissisticnumbers-300x112.png" alt="narcissisticnumbers" width="300" height="112" /></a></p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

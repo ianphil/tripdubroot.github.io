@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>The Case of Azure Websites and Continuous Deployment | TripDubRoot</title>
+	<meta name="description" content="TL;DR: Build a site to do wireless surveys: https://wlansurvey.azurewebsites.net/So this post has a misleading title... Because I'm not going to explain how ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/development/devops/2015/03/03/the-case-of-azure-websites-and-continuous-deployment.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">The Case of Azure Websites and Continuous Deployment</h1>
+    <p class="meta">
+    March 3, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><a href="http://adminian.com/wp-content/uploads/2015/03/deployment2.png"><img class="alignnone size-medium wp-image-991" src="/assets/deployment2-300x137.png" alt="deployment2" width="300" height="137" /></a></p>
+<p>TL;DR: Build a site to do wireless surveys: <a href="https://wlansurvey.azurewebsites.net/">https://wlansurvey.azurewebsites.net/</a></p>
+<p>So this post has a misleading title... Because I'm not going to explain how this works, Azure Websites continuous deployment is not anything really new, and also It's well documented <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-publish-source-control/" target="_blank">here</a> and <a href="http://www.hanselman.com/blog/MovingAWebsiteToAzureWhileAddingContinuousDeploymentFromGit.aspx" target="_blank">here</a>.</p>
+<p>Anyhow, the family and I recently moved into a new house. Our ISP was out today, running cables and getting things setup. Since I didn't really know how well my wireless router was going to cover the house, I asked Nick the fella working on getting me back online, if he had the ability to do a wireless survey of my house.</p>
+<p>Nick said, "Well they give us this <em>Airport Utillity</em> app on our phone. I can tell you what the db levels are, but I'm not really sure what they mean".</p>
+<p>Problem: This person should be able to tell me what my signal quality is, room by room.</p>
+<p>Solution: Five minutes googling with bing lead me to a <a href="http://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm" target="_blank">Stack Overflow post</a> that sounded smart enough and even had math explaining how to go from dBm to Quality percentage. <strong>Time to deploy something to Azure.</strong></p>
+<p>Enter Azure Websites Continuous Deployment. While he finished up the house, I started writing some quick code, pushed to GitHub, and setup my website in Azure to deploy from... you guessed it GitHub.</p>
+<p>At this point you maybe asking: "Pray tell, how did you deploy to Azure with no internet connectivity?".</p>
+<p>To that I say: "With my Verizon Jetpack, of course".</p>
+<p>By the time he was finished, I'd installed the <em>Airport Utility</em> app on my iPhone. Ran around the house gathering the dBm metrics for each room, and plugged them into: <a href="http://wlansurvey.azurewebsites.net" target="_blank">http://wlansurvey.azurewebsites.net</a>.</p>
+<p>He was a little shocked, but took down the web address and said he was going to tell all the guys at the office.</p>
+<p>Awesome! Hope you all had a great weekend... I spent mine moving.</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

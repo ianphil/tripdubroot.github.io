@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> TripDubRoot</title>
+	<meta name="description" content="To us, and those like us...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/blog/page6/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/perl/2015/02/09/running-perl-on-windows.html">
+            Running Perl on Windows...
+          </a>
+        </h1>
+        <p class="meta">
+          February 9, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/strawberry.bmp" alt="strawberry" /></p>
+<p>My Perl on Windows setup:</p>
+<ul>
+<li><a href="http://strawberryperl.com/" target="_blank">Strawberry Perl</a></li>
+<li><a href="http://www.sublimetext.com/3" title="Sublime Text 3" target="_blank">Sublime Text 3</a></li>
+<li><a href="https://metacpan.org/release/App-cpanminus" target="_blank">cpan App::cpanminus</a></li>
+<li><a href="https://packagecontrol.io/packages/PerlTidy" target="_blank">PerlTidy</a></li>
+</ul>
+
+        <a class="button" href="/perl/2015/02/09/running-perl-on-windows.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/powershell/2015/01/04/get-your-azure-ad-tenant-id-with-powershell.html">
+            Get your Azure AD Tenant ID with PowerShell
+          </a>
+        </h1>
+        <p class="meta">
+          January 4, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>I’ve been working with Azure AD authentication and GraphAPIs a lot lately. This is a short script I wrote to get your tenant ID…</p>
+<p>[code lang="powershell"]<br />
+param([string]$TenantName = (Read-Host &quot;What is your tenant name? (example.onmicrosoft.com)&quot;)) </p>
+<p>[xml]$data = (New-Object System.Net.WebClient).DownloadString(&quot;https://login.windows.net/$TenantName/FederationMetadata/2007-06/FederationMetadata.xml&quot;) </p>
+<p>$dirtyID = $data.EntityDescriptor.entityID.Replace(&quot;https://sts.windows.net/&quot;, &quot;&quot;) </p>
+<p>$dirtyID.Replace(&quot;/&quot;, &quot;&quot;)<br />
+[/code]</p>
+
+        <a class="button" href="/azure/powershell/2015/01/04/get-your-azure-ad-tenant-id-with-powershell.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/2014/12/29/8-azure-preview-features-you-should-sign-up-for.html">
+            8 Azure Preview Features You Should Look At
+          </a>
+        </h1>
+        <p class="meta">
+          December 29, 2014
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://adminian.com/wp-content/uploads/2014/12/PreviewFeatures.png"><img title="PreviewFeatures" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="PreviewFeatures" src="/assets/PreviewFeatures_thumb.png" width="800" height="417" /></a></p>
+<p>Azure… There is plenty to keep up with, just dealing with the features that have been released. With that in mind, have you enabled the preview features? Take a minute and go to your subscription account portal and have a look… <a title="https://account.windowsazure.com/PreviewFeatures" href="https://account.windowsazure.com/PreviewFeatures">https://account.windowsazure.com/PreviewFeatures</a></p>
+<h3>Azure Batch</h3>
+<p>Have an application or parts of an application that does processor intensive work? Hand it off to Azure Batch. Basically it pushes your code to a designated amount of VMs and processes the task in parallel.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/batch-technical-overview/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Auditing for Azure SQL Database</h3>
+<p>Exactly what it sounds like… It logs events to an Azure Storage account. What are some of these events you might ask? I’m glad you did: Accessing data, Schema changes, data changes, accounts, roles, permissions, security exceptions. For a complete reference see the <a href="http://go.microsoft.com/fwlink/?linkid=506733&amp;clcid=0x409" target="_blank">Audit Log Format Reference DOCX</a>.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/sql-database-auditing-get-started/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Operational Insights</h3>
+<p>Need to monitor a lot of machines? This is what Operational Insights is good at… Install an agent. It talks to Azure Operational Insights web service running in … well Azure. There is a portal where you can create all kinds of great looking dashboards and reports.</p>
+<p><a href="http://msdn.microsoft.com/library/azure/084e880f-8dc1-46f6-914c-fa647d2f78ef" target="_blank">More Info &gt;&gt;</a></p>
+<h3>PlayReady License Server</h3>
+<p>So you run a live video feed of an event, or a video on demand service and you want to secure your content. You can with PlayReady. This is a token issuing service that allows a player to decrypt your video content. You should check this out if you’re doing anything with video… all the cool kids are using it, and it’s in my wheel house. Shoot me an email if you’d like to discuss more.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/media-services-protect-asset/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Azure Premium Storage</h3>
+<table cellspacing="0" cellpadding="2" width="800" border="0">
+<tbody>
+<tr>
+<td valign="top" width="200"><strong>Premium Storage Disk Type</strong></td>
+<td valign="top" width="200"><strong>P10</strong></td>
+<td valign="top" width="200"><strong>P20</strong></td>
+<td valign="top" width="200"><strong>P30</strong></td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>Disk size</strong></td>
+<td valign="top" width="200">128 GB</td>
+<td valign="top" width="200">512 GB</td>
+<td valign="top" width="200">1024 GB (1 TB)</td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>IOPS per disk</strong></td>
+<td valign="top" width="200">500</td>
+<td valign="top" width="200">2300</td>
+<td valign="top" width="200">5000</td>
+</tr>
+<tr>
+<td valign="top" width="200"><strong>Throughput per disk</strong></td>
+<td valign="top" width="200">100 MB</td>
+<td valign="top" width="200">150 MB</td>
+<td valign="top" width="200">200 MB</td>
+</tr>
+</tbody>
+</table>
+<p>5000 IOPS per disk!.. Shut up and take my money!!</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/storage-premium-storage-preview-portal/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Stream Analytics</h3>
+<p>Real time data analytics allows you to analyze patterns in data streams or historical data before storing the events. Think… the backend to your IoT strategy. Not a lot of companies are thinking about their IoT strategy yet… but at Microsoft we are. This is why Gartner and other think-tanks are putting so much weight on data sciences in the coming future. You have been warned.</p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/stream-analytics-introduction/" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Windows Azure Files</h3>
+<p>For this you’ll run some PowerShell to create a file share in an Azure Storage account. VMs can then mount these as a network shares or you can access the share using the REST API, much like blob storage. Pretty sweet feature… one I’m using right now!</p>
+<p><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx" target="_blank">More Info &gt;&gt;</a></p>
+<h3>Billing Alert Service </h3>
+<p>If you’re the account administrator for your subscription, you can set an alert when you spend “X” amount of dollars. Not quite a billing API, but I configured a few alerts to let me know when I’ve spent different amounts of money. </p>
+<p><a href="http://azure.microsoft.com/en-us/documentation/articles/azure-billing-set-up-alerts/" target="_blank">More Info &gt;&gt;</a></p>
+
+        <a class="button" href="/azure/2014/12/29/8-azure-preview-features-you-should-sign-up-for.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/administration/azure/development/devops/2014/12/02/azure-web-sites-daasdiagnostics-as-a-service.html">
+            Azure Web Sites DaaS–Diagnostics as a Service
+          </a>
+        </h1>
+        <p class="meta">
+          December 2, 2014
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://adminian.com/wp-content/uploads/2014/12/image.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/assets/image_thumb.png" width="507" height="171" /></a></p>
+<p>&nbsp;</p>
+<p>DaaS for Azure Web Sites is a great tool when “bad things happen to a good site”! It allows you to collect a plethora of different logs and parses them into an easily digestible format. The idea is to enable you to get to root cause without turning to the forums or Microsoft support. I’m running a WordPress site that, knock on digital wood, is pretty rock solid. Even so, I’m going to use this site to play around.</p>
+<p>Until the recent <a href="http://azure.microsoft.com/blog/2014/12/01/new-updates-to-daas-diagnostics-as-a-service-for-azure-websites/" target="_blank">announcement</a>, the collection and parsing of PHP logs wasn’t an option, but now DaaS will collect PHP specific files along with Event Logs, Memory Dumps and HTTP Logs. First you will need to enable <strong>Web Server Logging</strong> to the <strong>File System</strong>. With that down just browse over to <a href="https://%3cyoursitename%3e.scm.azurewebsites.net/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/DaaS</b></a> and you’ll get a page like this…</p>
+<p><a href="http://adminian.com/wp-content/uploads/2014/12/image1.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/assets/image_thumb1.png" width="534" height="258" /></a></p>
+<p>&nbsp;</p>
+<p>All you need to do is click <strong>Diagnose Now</strong> and your off to the races. Oh, and you can also schedule an analysis if you’d like…</p>
+<p>Once that is complete you can download your logs at: <a href="https://&lt;YourSiteName&gt;.scm.azurewebsites.net/Zip/data/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/Zip/</b>data/<b>DaaS</b></a>. </p>
+
+        <a class="button" href="/administration/azure/development/devops/2014/12/02/azure-web-sites-daasdiagnostics-as-a-service.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/devops/powershell/2014/11/18/new-video-save-time-and-money-with-azure-automation.html">
+            New Video: Save Time and Money with Azure Automation
+          </a>
+        </h1>
+        <p class="meta">
+          November 18, 2014
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://adminian.com/wp-content/uploads/2014/11/save-time.png"><img title="save-time" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="save-time" src="/assets/save-time_thumb.png" width="240" height="214" /></a></p>
+<p>We’ve all seen compute power sitting idle, costing us money... Well no more! Automate the creation, deployment, monitoring, and maintenance of resources in your Microsoft Azure environment using a highly scalable and reliable workflow execution engine.</p>
+<p><iframe height="315" src="//www.youtube.com/embed/A-F6mJZ1fWg" frameborder="0" width="560" allowfullscreen></iframe>
+<p>Demo files at: <a href="http://aka.ms/githubautomation">http://aka.ms/githubautomation</a></p>
+
+        <a class="button" href="/azure/devops/powershell/2014/11/18/new-video-save-time-and-money-with-azure-automation.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/blog/page5" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      Prev
+    </a>
+    
+    
+    <a href="/blog/page7" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

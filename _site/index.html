@@ -68,6 +68,22 @@
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled -->
 			
 
@@ -135,8 +151,8 @@
       <div class="home">
   
   <div class="call-out" 
-  style="background-image: url('/')">
-    Well this works!
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
 
   </div>
   
@@ -146,19 +162,18 @@
     <div class="post-teaser">
       <header>
         <h1>
-          <a class="post-link" href="/2016/03/12/kids-b-cra-cra.html">
-            My Kids b Cra Cra
+          <a class="post-link" href="/2016/03/15/open-source-azure.html">
+            Azure does Open Source Amigo
           </a>
         </h1>
         <p class="meta">
-          March 12, 2016
+          March 15, 2016
         </p>
       </header>
       <div class="excerpt">
-        <p>Jekyll supports the use of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</p>
+        <p>That’s right mf, Azure do it like you want it.</p>
 
-
-        <a class="button" href="/2016/03/12/kids-b-cra-cra.html">
+        <a class="button" href="/2016/03/15/open-source-azure.html">
           Continue reading
         </a>
       </div>
@@ -167,19 +182,139 @@
     <div class="post-teaser">
       <header>
         <h1>
-          <a class="post-link" href="/2014/11/30/sample-post.html">
-            Sample post
+          <a class="post-link" href="/azure/development/2016/01/11/azure-storage-data-movement-uploader-in-five-commits.html">
+            Azure Storage Data Movement Uploader in Five Commits
           </a>
         </h1>
         <p class="meta">
-          November 30, 2014
+          January 11, 2016
         </p>
       </header>
       <div class="excerpt">
-        <p>Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.</p>
+        <p><img src="/assets/filecopy.gif" alt="" /></p>
+<p>I have two goals: <strong>Learn more about Git</strong> and<strong> learn about DMLib</strong>. <strong>Azure Storage Data Movement Library</strong> (DMLib) has the same performance and exposes the core functionalities of AzCopy and this is an awesome super(ficial) review of one of its methods. It’s not that in-depth, but it does a good job of checking just beneath the hood.  I’m going to try to use commits and branches to tell the story, the real goal of this post. This is a simple example to start out, but if you like this method of storytelling using Git, or if you don’t, leave a comment!</p>
+<p>On January 7th, Microsoft posted to the Azure Blog that there is a new release of DMLib and it <strong>rev’ed to 0.2.0</strong>. Lot’s of work went into giving us the <strong>ability to move directories around</strong>: up to Azure, around in Azure, you get the idea. I’ve played a lot with AzCopy, on which this particular set of classes is based. I’ve not played at all with DMLib, but it’s a big deal, so let’s have a look.</p>
+<p>We have a repository to work from hosted at: <a title="https://github.com/devdash/AzureStorageDataMovementTester" href="http://ianp.co/1kZ0qoG">https://github.com/devdash/AzureStorageDataMovementTester</a>. I want you to first focus on the branches, there are four: ParallelOps, ProgressManager, SvcPointMgr, and of course master. We’ll follow the Branches and commits in this order:</p>
+<ol>
+<li>Master</li>
+<li>ProgressManager</li>
+<li>ParallelOps</li>
+<li>SvcPointMgr</li>
+</ol>
+<p>Let’s take a step back and have a look at the <a href="http://ianp.co/1kZ1rNr">documentation</a> for DMLib, the reasons for these branches will become apparent. The docs have you Upload a blob. This upload creates a progress tracker and configures parallel operations. There is a best practice section in the docs that talks about increasing the HTTP connections limit using the ServicePointManager class. Now have a look at the commits for the “last” branch…</p>
+<p><a href="http://devian.co/wp-content/uploads/2016/01/image.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="/assets/image_thumb.png" alt="image" width="610" height="389" border="0" /></a></p>
+<p>As you see, the <strong>commits/branches mirror the examples the documentation</strong> gives us. It also let’s us switch between different configurations of the uploader, so that we can test the functionality of what each piece of code adds. Cool! I think this is a neat way of using Git, not just for keeping code safe, but also as a learning tool.</p>
+<p>Enough of the Git horse play, let us look at the code! The “Initial Commit” is nothing more than GitHub creating the repo, so we’ll skip over that and only four commits left. Starting with the master branch I simply added the project with a bit of bits already laid down. This code will <strong>take a ZIP file</strong> found in the project and <strong>upload it to blob storage</strong>. We will use the app.config file and drop the connection string in, hit F5 and it uploads the file. It then pauses and waits for you to verify everything has worked as expected. If it has you can the hit any key and it will clean up all the changes it just made to you storage account and close. Simple.</p>
+<h1>The Code that Does the Dang Thing</h1>
+<p>From the <strong>Master</strong> Branch:</p>
+<p>[code lang="csharp"]</p>
+<p>private static async Task BlobUploadTest()<br />
+        {<br />
+            string sourceFilename = &quot;Downloads.zip&quot;;<br />
+            string destinationFilename = &quot;Downloads_blockblob.zip&quot;;</p>
+<p>            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);<br />
+            UploadOptions options = new UploadOptions();<br />
+            options.ContentType = &quot;application/zip&quot;;</p>
+<p>            try<br />
+            {<br />
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, null);<br />
+            }<br />
+            catch (Exception ex)<br />
+            {<br />
+                Console.WriteLine(ex.Message);<br />
+            }</p>
+<p>            Console.WriteLine(&quot;File {0} is uploaded to {1} successfully.&quot;, sourceFilename, destinationBlob.Uri.ToString());<br />
+        }</p>
+<p>[/code]</p>
+<p>This code first calls the <em>GetCloudBlob</em> method that uses the standard <a href="http://ianp.co/1VZOMr5">Azure Storage SDK</a> to create a container in your storage account. I’m not going to go into detail about that. The next part we just set the content type for file we are uploading. These are just standard <a href="http://ianp.co/1W05y9y">MIME types</a>. Finally, we move on to the actual upload. Here we use the aptly named static method <em>UploadAsync </em>that is hung off the class <em>TransferManager</em>. It takes three parameters: Source File, Destination Blob, Options, and Transfer context. The Transfer context for now is null. It does what you think, uploads a file to blob storage. Press F5 to run this bit of code, it does do much but before you press any key, which deletes everything we just did from Azure, have a look at the blobs in your storage account, do you see a new container? A new file? It took me <strong>15784 milliseconds</strong> to upload the file…</p>
+<h1>But I want Progress Tracking</h1>
+<p>From the <strong>ProgressManager</strong> Branch:</p>
+<p>[code lang="csharp"]</p>
+<p>private static async Task BlobUploadTest()<br />
+        {<br />
+            string sourceFilename = &quot;Downloads.zip&quot;;<br />
+            string destinationFilename = &quot;Downloads_blockblob.zip&quot;;</p>
+<p>            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);<br />
+            UploadOptions options = new UploadOptions();<br />
+            options.ContentType = &quot;application/zip&quot;;</p>
+<p>            TransferContext context = new TransferContext();<br />
+            context.ProgressHandler = new Progress&lt;TransferProgress&gt;((progress) =&gt;<br />
+            {<br />
+                Console.WriteLine(&quot;Bytes Uploaded: {0}&quot;, progress.BytesTransferred);<br />
+            });</p>
+<p>            try<br />
+            {<br />
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);<br />
+            }<br />
+            catch (Exception ex)<br />
+            {<br />
+                Console.WriteLine(ex.Message);<br />
+            }</p>
+<p>            Console.WriteLine(&quot;File {0} is uploaded to {1} successfully.&quot;, sourceFilename, destinationBlob.Uri.ToString());<br />
+        }</p>
+<p>[/code]</p>
+<p>This code news up the transfer context. Then news up the <em>Progress</em> generic class with type <em>TransferProgress </em>and passes a delegate as a parameter to the constructor. The <em>Progress</em> class hangs off the <em>ProgressHandler</em>  on the aforementioned context. Basically it will write to the console how many bytes have been transferred. Which is a great opportunity to do welcomed binary maths. We also update the <em>UploadAsync</em> method to include the TransferContext. Now when run you will see the byte count being uploaded. Everything else work the same. It took me <strong>18458 milliseconds</strong> to upload the file…</p>
+<h1>Now Do It in Parallel</h1>
+<p>From the <strong>ParallelOps</strong> Branch:</p>
+<p>[code lang="csharp"]</p>
+<p>private static async Task BlobUploadTest()<br />
+        {<br />
+            string sourceFilename = &quot;Downloads.zip&quot;;<br />
+            string destinationFilename = &quot;Downloads_blockblob.zip&quot;;</p>
+<p>            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);<br />
+            UploadOptions options = new UploadOptions();<br />
+            options.ContentType = &quot;application/zip&quot;;</p>
+<p>            TransferManager.Configurations.ParallelOperations = 64;</p>
+<p>            TransferContext context = new TransferContext();<br />
+            context.ProgressHandler = new Progress&lt;TransferProgress&gt;((progress) =&gt;<br />
+            {<br />
+                Console.WriteLine(&quot;Bytes Uploaded: {0}&quot;, progress.BytesTransferred);<br />
+            });</p>
+<p>            try<br />
+            {<br />
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);<br />
+            }<br />
+            catch (Exception ex)<br />
+            {<br />
+                Console.WriteLine(ex.Message);<br />
+            }</p>
+<p>            Console.WriteLine(&quot;File {0} is uploaded to {1} successfully.&quot;, sourceFilename, destinationBlob.Uri.ToString());<br />
+        }</p>
+<p>[/code]</p>
+<p>This code is one line and sets the ParallelOperations to 64. This should decrease the time to upload. Previous test was 18458 milliseconds and mine ran this time in <strong>16042 milliseconds</strong>.</p>
+<h1>Best Practice: Set the HTTP Connection Limit</h1>
+<p>From the <strong>SvcPointMgr</strong> Branch:</p>
+<p>[code lang="csharp"]</p>
+<p>private static async Task BlobUploadTest()<br />
+        {<br />
+            string sourceFilename = &quot;Downloads.zip&quot;;<br />
+            string destinationFilename = &quot;Downloads_blockblob.zip&quot;;</p>
+<p>            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);<br />
+            UploadOptions options = new UploadOptions();<br />
+            options.ContentType = &quot;application/zip&quot;;</p>
+<p>            ServicePointManager.DefaultConnectionLimit = Environment.ProcessorCount * 8;<br />
+            TransferManager.Configurations.ParallelOperations = 64;</p>
+<p>            TransferContext context = new TransferContext();<br />
+            context.ProgressHandler = new Progress&lt;TransferProgress&gt;((progress) =&gt;<br />
+            {<br />
+                Console.WriteLine(&quot;Bytes Uploaded: {0}&quot;, progress.BytesTransferred);<br />
+            });</p>
+<p>            try<br />
+            {<br />
+                await TransferManager.UploadAsync(sourceFilename, destinationBlob, options, context, CancellationToken.None);<br />
+            }<br />
+            catch (Exception ex)<br />
+            {<br />
+                Console.WriteLine(ex.Message);<br />
+            }</p>
+<p>            Console.WriteLine(&quot;File {0} is uploaded to {1} successfully.&quot;, sourceFilename, destinationBlob.Uri.ToString());<br />
+        }</p>
+<p>[/code]</p>
+<p>This code is also a one liner and sets the DefaultConnectionLimit of the ServicePoint Object (ServicePointManager Class) to 8 times the processor count. Per the documentation this is one of the learnings from the folks behind AzCopy. My upload time is now <strong>15863 milliseconds</strong>.</p>
+<p>&nbsp;</p>
+<p>This post lays out a simple file upload to Azure Blob storage using the Azure Storage Data Movement Library. Since it pulls from the learnings and code behind AzCopy you should take it seriously. Spend some time with the samples and start <strong>planning</strong> for this library in your applications.</p>
 
-
-        <a class="button" href="/2014/11/30/sample-post.html">
+        <a class="button" href="/azure/development/2016/01/11/azure-storage-data-movement-uploader-in-five-commits.html">
           Continue reading
         </a>
       </div>
@@ -188,18 +323,198 @@
     <div class="post-teaser">
       <header>
         <h1>
-          <a class="post-link" href="/2014/11/29/feature-images.html">
-            Feature images
+          <a class="post-link" href="/azure/2015/11/18/the-azure-25-dollar-challenge.html">
+            The Azure $25 Dollar Challenge
           </a>
         </h1>
         <p class="meta">
-          November 29, 2014
+          November 18, 2015
         </p>
       </header>
       <div class="excerpt">
-        <p>This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.</p>
+        <p>With today's announcement about Visual Studio Dev Essentials I asked, <strong>what can you run for $25 in Azure?</strong> Here's my list:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Region</th>
+<th>Type</th>
+<th>Cluster</th>
+<th>Tier</th>
+<th>Instance Size</th>
+<th>Instance Count</th>
+<th>Hours</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://ianp.co/1M3Uqo2">App Service</a></td>
+<td>East US</td>
+<td></td>
+<td></td>
+<td>Free</td>
+<td>F1</td>
+<td>10</td>
+<td>744</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><a href="http://ianp.co/1M3Uhkv">Azure ML</a></td>
+<td>East US</td>
+<td></td>
+<td></td>
+<td>Free</td>
+<td></td>
+<td>10GB Data Set, Stage API</td>
+<td>744</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>App Service</td>
+<td>East US</td>
+<td></td>
+<td></td>
+<td>Shared</td>
+<td>D1</td>
+<td>2</td>
+<td>744</td>
+<td>19.34</td>
+</tr>
+<tr>
+<td>DocumentDB</td>
+<td>East US</td>
+<td></td>
+<td></td>
+<td></td>
+<td>S1</td>
+<td>1 Collection</td>
+<td>744</td>
+<td>25.00</td>
+</tr>
+<tr>
+<td>HDInsight</td>
+<td>East US</td>
+<td>Linux</td>
+<td>Hadoop</td>
+<td></td>
+<td>A3</td>
+<td>2 Head, 2 Worker Nodes</td>
+<td>39</td>
+<td>24.96</td>
+</tr>
+<tr>
+<td>SQL Database</td>
+<td>East US</td>
+<td>Single Database</td>
+<td></td>
+<td>Standard</td>
+<td>S0</td>
+<td>1</td>
+<td>744</td>
+<td>15.03</td>
+</tr>
+<tr>
+<td>SQL Database</td>
+<td>East US</td>
+<td>Single Database</td>
+<td></td>
+<td>Basic</td>
+<td>B</td>
+<td>5</td>
+<td>744</td>
+<td>24.92</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>East US</td>
+<td>Block Blob</td>
+<td></td>
+<td>Basic</td>
+<td>LRS</td>
+<td>1000GB, 250 Trans Units</td>
+<td></td>
+<td>24.90</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Windows/Linux</td>
+<td></td>
+<td>Standard</td>
+<td>A0</td>
+<td>1</td>
+<td>744</td>
+<td>14.88</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Windows/Linux</td>
+<td></td>
+<td>Standard</td>
+<td>A3</td>
+<td>1</td>
+<td>69</td>
+<td>24.84</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Windows</td>
+<td></td>
+<td>Standard</td>
+<td>D2</td>
+<td>1</td>
+<td>85</td>
+<td>23.80</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Linux</td>
+<td></td>
+<td>Standard</td>
+<td>D2</td>
+<td>2</td>
+<td>80</td>
+<td>24.64</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Windows/Linux</td>
+<td></td>
+<td>Standard</td>
+<td>D11</td>
+<td>3</td>
+<td>24</td>
+<td>23.76</td>
+</tr>
+<tr>
+<td>VMs</td>
+<td>East US</td>
+<td>Linux</td>
+<td></td>
+<td>Standard</td>
+<td>D11</td>
+<td>5</td>
+<td>24</td>
+<td>23.40</td>
+</tr>
+</tbody>
+</table>
+<p>Here are a couple of the highlights from this list...</p>
+<ul>
+<li>I was surprised by the free tier for Azure ML. It looks like you can build, train, and test pretty complex algorithms without a credit card.</li>
+<li>You can run a pretty beefy HDInsight cluster for near a week!</li>
+<li>While not "really" listed here, you can run a Basic Azure SQL database for 5 bucks... it's only 2GB, still not bad.</li>
+<li>You can run a D2 Windows box for more than two weeks.</li>
+<li>Five Linux D11 boxes for a full day.</li>
+</ul>
+<p>Hopefully this paints a pretty clear picture, that $25 dollars a month can go a long way.</p>
 
-        <a class="button" href="/2014/11/29/feature-images.html">
+        <a class="button" href="/azure/2015/11/18/the-azure-25-dollar-challenge.html">
           Continue reading
         </a>
       </div>
@@ -208,19 +523,66 @@
     <div class="post-teaser">
       <header>
         <h1>
-          <a class="post-link" href="/2014/11/28/markdown-and-html.html">
-            Markdown and HTML
+          <a class="post-link" href="/community/development/productivity/2015/11/14/tech404-atlantas-slack-community.html">
+            Tech404 - Atlanta's Slack Community
           </a>
         </h1>
         <p class="meta">
-          November 28, 2014
+          November 14, 2015
         </p>
       </header>
       <div class="excerpt">
-        <p>Jekyll supports the use of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</p>
+        <table cellspacing="0" cellpadding="2" width="750" border="0">
+<tbody>
+<tr>
+<td valign="top" width="375"><a href="http://devian.co/wp-content/uploads/2015/11/IMG_0785.png"><img style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; float: left; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="" src="/assets/IMG_0785.png" width="320" align="left" height="569" /></a></td>
+<td valign="top" width="375">
+<p>Community is important to me.</p>
+<p>Community is important to Microsoft and to many other people and businesses. If it's important to you and you're in the Atlanta area you should checkout <a href="http://tech404.io">Tech404</a>.&nbsp; This is the sign up link. It'll take you to a page where you put in your email. You'll then receive a confirmation in your inbox. That email contains a link to the Slack sign up page where you'll enter user info like email and password. </p>
+<p>A word about slack: awesomeness. A few more: Slack is a communication tool for teams of people. There are a lot extensions called <a href="https://slack.com/integrations">integrations</a>, many of which are developer focused. There is also <a href="https://slack.com/downloads">clients</a> for all platforms that you can download or install from the various stores. Lastly, there is an extensive <a href="https://api.slack.com">API</a> to bend the service to your will...</p>
+<p>So if you're in the ATL, you work with tech like JavaScript or Azure or Docker, and you want to work with some of the best Atlanta has to offer... Signup and join the conversation. </p>
+</td>
+</tr>
+</tbody>
+</table>
 
+        <a class="button" href="/community/development/productivity/2015/11/14/tech404-atlantas-slack-community.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html">
+            The Azure Rest API, or Rather Resource Management API
+          </a>
+        </h1>
+        <p class="meta">
+          November 3, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Let's start with a simple bingle search. Head over to <a href="https://duckduckgo.com/">duckduckgo.com</a> and type in "Azure REST API" and hit quack...</p>
+<p><img class="alignnone" src="/assets/search.png" alt="" width="781" height="427" /></p>
+<p>The top hit is already leading you astray! It takes us to the Azure Service Management API (ASM). "Ian, why is that not right?", you ask? Well to be fair it's not wrong... but wait we want Azure Resource Manager (ARM). It's the latest hotness.</p>
+<p>Let me take a step back here to say, I fall off of mountain bikes regularly, it's my excuse.</p>
+<p><img class="alignnone" src="/assets/scott-scale-29er-2010-mountain-bike.jpg" alt="" width="600" height="356" /></p>
+<p>Dear Katniss Everdeen...</p>
+<p>uhh, back to Azure.</p>
+<p>ASM is like?.. Well my 2009 Pathfinder. It's trusty, and gets me to and fro, but doesn't have all the latest bells and whistles (Bluetooth!!!).  ARM is like?.. I want to say a Tesla, but that may be a little much. A NEW PATHFINDER! ha that would probably have Bluetooth.</p>
+<p>ARM is where you should be focusing. Instead of crafting an ASM based URL with a POST method that looks something like:</p>
+<blockquote><p>https://management.core.windows.net//services/hostedservices//deployments</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx">ref</a></p>
+<p>With a body full of XML &lt;digital shiver /&gt;. The 90's called wanting their code back... You should instead, create an ARM PUT that looks something like:</p>
+<blockquote><p>https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?validating={true|false}&amp;api-version={api-version}</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/mt163591.aspx">ref</a></p>
+<p>With a body full of Crockford approved, JSON.</p>
+<p>Now, there are plenty of tools to help you craft this JSON, so don't fret much. Check out this (shameless plug) awesome <a href="https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros">video </a>about how to use Visual Studio to do just that.</p>
+<p>Trust me, I'm a <a href="http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg">professional</a>.</p>
 
-        <a class="button" href="/2014/11/28/markdown-and-html.html">
+        <a class="button" href="/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html">
           Continue reading
         </a>
       </div>
@@ -228,6 +590,16 @@
     
   </div>
 
+  
+  <div class="pagination">
+    
+    
+    <a href="/blog/page2" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
   
 </div>
 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Authenticate to the Azure Service Management API | TripDubRoot</title>
+	<meta name="description" content="So, back in the day we used x509 Certificates to authenticate to Azure's API. A year or so ago, Azure Active Directory became the defacto method of authentic...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/development/2015/07/01/authenticate-to-the-azure-service-management-api.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Authenticate to the Azure Service Management API</h1>
+    <p class="meta">
+    July 1, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><img src="/assets/062515_1835_Authenticat1.png" alt="" /></p>
+<p>So, back in the day we used x509 Certificates to authenticate to Azure's API. A year or so ago, Azure Active Directory became the defacto method of authentication. MSDN talks about it in the article: <a href="https://msdn.microsoft.com/en-us/library/azure/dn790557.aspx">Authenticating Azure Resource Manager requests</a>. From the article:</p>
+<blockquote><p>"<span style="color: #2a2a2a; font-family: Segoe UI; font-size: 10pt; background-color: white;">All of the tasks that you do on resources using the Azure Resource Manager must be authenticated with Azure Active Directory. The easiest way to do this is to use PowerShell or Azure CLI. If you don't have access to PowerShell or Azure CLI, use the Azure Management Portal to set up authentication.</span>"</p></blockquote>
+<p>So yea… this isn't necessarily true. I worked with a couple of folks from support engineering to use the common authentication endpoint, so that you don't have to setup an application in Azure Active Directory and provide an application id.</p>
+<p>I posted the code up to GitHub here: <a href="https://github.com/devdash/EzAzureMgmtApiAuth">devdash/EzAzureMgmtApiAuth</a>.</p>
+<p><strong>*Note:</strong> I can't claim this is supported in anyway… but it works great and has since the beginning.</p>
+<h1>The App</h1>
+<p>Basically it's a console app that asks you to login using your Azure credentials, asks you which subscription you'd like to use if you have more than one, and then finally prints out the choice you made. Simple, but I think powerful.</p>
+<p><img src="/assets/062515_1835_Authenticat2.png" alt="" /></p>
+<h1>The Code</h1>
+<p>If you're anything like me, you'll open Git Shell and run:</p>
+<pre>git clone <a href="https://github.com/devdash/EzAzureMgmtApiAuth.git">https://github.com/devdash/EzAzureMgmtApiAuth.git</a></pre>
+<p>Then open the SLN:</p>
+<pre>C:srcghEzAzureMgmtApiAuth [master]&gt; .AzureRestPlayground.sln</pre>
+<p>Now normally once I have the solution open in Visual Studio and I see that it's a console app I start looking at: Program.cs. Below is the relevant code, the code that kicks off the authentication process…</p>
+<p>[code lang="csharp"]<br />
+static void Main(string[] args)<br />
+{<br />
+     var azSubs = new AzureSubscriptions();<br />
+     var subList = azSubs.GetSubscriptionList();</p>
+<p>     ...<br />
+}<br />
+[/code]</p>
+<p>This code isn't rocket science. It initializes an object of type <strong>AzureSubscriptions</strong> and calls the method <strong>GetSubscriptionList</strong>. Let's go have a look at this method, particularly the second line:</p>
+<p>[code lang="csharp"]<br />
+string token = AuthHelper.GetAuthorizationHeader();<br />
+[/code]</p>
+<p>Off to look at the <strong>AuthHelper</strong> class and it's static method <strong>GetAuthorizationHeader</strong>…</p>
+<p>[code lang="csharp"]<br />
+public static string GetAuthorizationHeader()<br />
+{<br />
+     AuthenticationResult result = null;</p>
+<p>     var context = new AuthenticationContext(&quot;https://login.windows.net/common&quot;); // tenant agnostic endpooint<br />
+     result = context.AcquireToken(&quot;https://management.core.windows.net/&quot;,<br />
+                                   &quot;1950a258-227b-4e31-a9cf-717495945fc2&quot;, // Windows Azure Management API's Client ID<br />
+                                   new Uri(&quot;urn:ietf:wg:oauth:2.0:oob&quot;)); // standard redirect for native apps (console, desktop, mobile, etc)</p>
+<p>     if (result == null)<br />
+     {<br />
+         throw new InvalidOperationException(&quot;Failed to obtain the JWT token&quot;);<br />
+     }</p>
+<p>     return result.AccessToken;<br />
+}<br />
+[/code]</p>
+<p>And here finally we se some good stuff. We got all this good ness by pulling in the <strong>ADAL</strong> nuget package and writing a couple of lines of code. We pulled the "Client ID" being passed to the <strong>AcquireToken</strong> method using fiddler and tracing a "promoted" app and borrowing it's ID. This is why my note above states that this probably isn't supported. From here we are returned a token. We construct our Auth Header in the HttpHelper class using this line of code:</p>
+<p>[code lang="csharp"]<br />
+request.Headers.Add(HttpRequestHeader.Authorization, &quot;Bearer &quot; + token);<br />
+[/code]</p>
+<p>Well that's that. Using the <strong>ADAL</strong> library and a common auth endpoint. Now any app can authenticate to any subscriptions service management API given the right credentials. Awesome!!</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

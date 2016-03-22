@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> TripDubRoot</title>
+	<meta name="description" content="To us, and those like us...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/blog/page8/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/powershell/2013/04/16/how-to-setup-windows-azure-powershell.html">
+            How To: Setup Windows Azure PowerShell
+          </a>
+        </h1>
+        <p class="meta">
+          April 16, 2013
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>A lot of the demos, lab environments, and test I do are in Azure. I try to script everything so that it’s repeatable and I don’t turn into a monkey clicking next. What fun is that? With that said I’ve put together how I setup my environment for communicating with Azure via PowerShell.</p>
+<p>First things first you’ll need <a href="http://www.microsoft.com/web/downloads/platform.aspx" target="_blank">Microsoft Web Platform Installer</a>. Once this is installed go ahead and open it. You should see a screen that looks like this:</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb.png" width="600" height="405" border="0" /></a></p>
+<p>Click add next to Windows Azure PowerShell and click install.</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image1.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb1.png" width="600" height="408" border="0" /></a></p>
+<p>You should see the Prerequisites screen, click I Accept.</p>
+<p><a href="http://adminian.files.wordpress.com/2013/04/image2.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" title="image" alt="image" src="/assets/image_thumb2.png" width="500" height="346" border="0" /></a></p>
+<p>This should start the install. Once it’s complete the module for Azure PowerShell should be installed. It also installed some of the Azure SDK libraries, but this is only part of the story. Now that we have the Azure module installed we need to configure it to talk with our Azure Subscription (by the way you should have one for this to work!). Here again this is something I do a little too often, so I keep a script around that handles everything.</p>
+<p><script src="https://gist.github.com/adminian/96e90c1a397f07b5dc18.js"></script></p>
+<p>Let me explain what’s going on here. First we import the module you just installed. This will need to be done each time you open PowerShell unless you use the Azure PowerShell shell. [*Hint: Put it in your profile.]  Next we have a couple of options. If you don’t have a certifiate you’ll need to create one. This is where the “makecert” command comes in. Once you've created it you'll need to add this to you subscription. You can do this by uploading the CER file by browsing to "Settings" in the management portal. If you already have a cert you can just import it into your certificate store using the “import-pfxcertificate” cmdlet. Once the certificate is in your store you need to save it to a variable for use later. Go to the Azure portal and get your Subscription ID. Set “MySubId” to that value. The subscription name can be anything really. Your storage account name is also in the Azure portal. Go to storage an you will see one or more accounts depending on how you’re setup. Grab the name of the one you want and use it as the value of “myStorageSubscription” variable. The last two commands are where the magic happens… “Set-AzureSubscription” creates the subscription on your machine. The “Select-AzureSubscription” makes it active. You can have multiple subscriptions!</p>
+<p>Now just run “get-azurevm” and you should see a list of VMs you have running.</p>
+
+        <a class="button" href="/azure/powershell/2013/04/16/how-to-setup-windows-azure-powershell.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/administration/powershell/2013/04/15/script-check-bitlocker-status-of-a-volume.html">
+            Script: Check BitLocker Status of a Volume
+          </a>
+        </h1>
+        <p class="meta">
+          April 15, 2013
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Recently a customer reached out to me with a challenge. They’d just purchased a number of Surface Pro devices. Being good stewards they wanted to ensure these devices had BitLocker enabled. We solved this by using a simple PowerShell script that gathered the information then emails a log.</p>
+<p>  <script src="https://gist.github.com/devdash/54cccf6386abee7b92f4.js"></script></p>
+
+        <a class="button" href="/administration/powershell/2013/04/15/script-check-bitlocker-status-of-a-volume.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/windows%20client/2013/04/04/visual-studio-2012-on-surface-rt.html">
+            Visual Studio 2012 on Surface RT
+          </a>
+        </h1>
+        <p class="meta">
+          April 4, 2013
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>http://youtu.be/vnPQIowNoZk</p>
+
+        <a class="button" href="/azure/windows%20client/2013/04/04/visual-studio-2012-on-surface-rt.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/devops/powershell/2013/04/01/powerdnsimple-a-powershell-module-for-dnsimple-com-rest-api.html">
+            PowerDNSimple: A PowerShell module for DNSimple.com REST API
+          </a>
+        </h1>
+        <p class="meta">
+          April 1, 2013
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><a href="http://adminian.files.wordpress.com/2013/04/dnsimple.png"><img title="dnsimple" style="display:inline;border-width:0;" border="0" alt="dnsimple" src="/assets/dnsimple_thumb.png" width="640" height="373" /></a>&nbsp;</p>
+<p>This journey started when I was building a test lab on Windows Azure. The goal was to run two SharePoint instances, one SharePoint 2010 farm and one SharePoint 2013 farm. In keeping with automating this network setup and build… I wanted a good way to lookup my VM’s VIP assigned by Azure and update an A record on DNSimple. It turns out a simple DNS Alias record is really what I needed, but never the less I’ve had a bit of fun and learned a few things along the way.</p>
+<p>I’ll come back to working with Azure in a later post, for now let’s focus on DNSimple…</p>
+<p>DNSimple.com offers a great service! I first heard about them from <a href="http://www.hanselman.com/blog/" target="_blank">Scott Hanselman</a>. I’ve not been disappointed. Not only do they have a robust API, but also 1 click DNS configuration for many popular services (I won’t hold it against them if they don’t have a Office365 configuration yet). </p>
+<p>My scripting language of choice is PowerShell. Naturally I turned there first to start automating. Out of this came <a href="https://github.com/adminian/PowerDNSimple" target="_blank">PowerDNSimple</a>. Drop it in your modules folder and you get a few new functions:</p>
+<ul>
+<li>Get-SMPLDomains – Get a list of domains hosted at DNSimple.  </li>
+<li>Get-SMPLDomainRecords – Get a list of records for a given domain.  </li>
+<li>Add-SMPLDomainRecord – Create a new record.  </li>
+<li>Update-SMPLDomainRecord – Update an existing record.  </li>
+<li>Remove-SMPLDomainRecord – Delete an existing record.</li>
+</ul>
+<p>Here is a sample script…</p>
+<p>[gist]https://gist.github.com/adminian/faaf45ca3737ab7f94ab[/gist]</p>
+
+        <a class="button" href="/devops/powershell/2013/04/01/powerdnsimple-a-powershell-module-for-dnsimple-com-rest-api.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/development/2013/03/31/awesomenimity-links-2-scriptcs.html">
+            Awesomenimity Links #2: ScriptCS
+          </a>
+        </h1>
+        <p class="meta">
+          March 31, 2013
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Links dipped in awesomesauce:</p>
+<ul>
+<li><a href="http://codebetter.com/glennblock/2013/02/28/scriptcs-living-on-the-edge-in-c-without-a-project-on-the-wings-of-roslyn-and-nuget/" target="_blank">scriptcs – Living on the edge in C# without a project on the wings of Roslyn and Nuget</a>  </li>
+<li><a href="https://github.com/glennblock/scriptcs" target="_blank">GitHub - scriptcs</a>  </li>
+<li><a href="http://www.dotnetrocks.com/default.aspx?showNum=853" target="_blank">DotNetRocks 853 Glenn Block Goes Open Source with ScriptCS</a>  </li>
+<li><a href="http://www.strathweb.com/2012/09/scripting-web-api-self-host-with-roslyn-ctp-part-1/" target="_blank">Scripting Web API self host with Roslyn CTP – Part 1</a></li>
+</ul>
+
+        <a class="button" href="/development/2013/03/31/awesomenimity-links-2-scriptcs.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/blog/page7" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      Prev
+    </a>
+    
+    
+    <a href="/blog/page9" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

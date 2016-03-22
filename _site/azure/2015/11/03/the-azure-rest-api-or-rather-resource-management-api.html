@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>The Azure Rest API, or Rather Resource Management API | TripDubRoot</title>
+	<meta name="description" content="Let's start with a simple bingle search. Head over to duckduckgo.com and type in "Azure REST API" and hit quack...The top hit is already leading you astray! ...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">The Azure Rest API, or Rather Resource Management API</h1>
+    <p class="meta">
+    November 3, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p>Let's start with a simple bingle search. Head over to <a href="https://duckduckgo.com/">duckduckgo.com</a> and type in "Azure REST API" and hit quack...</p>
+<p><img class="alignnone" src="/assets/search.png" alt="" width="781" height="427" /></p>
+<p>The top hit is already leading you astray! It takes us to the Azure Service Management API (ASM). "Ian, why is that not right?", you ask? Well to be fair it's not wrong... but wait we want Azure Resource Manager (ARM). It's the latest hotness.</p>
+<p>Let me take a step back here to say, I fall off of mountain bikes regularly, it's my excuse.</p>
+<p><img class="alignnone" src="/assets/scott-scale-29er-2010-mountain-bike.jpg" alt="" width="600" height="356" /></p>
+<p>Dear Katniss Everdeen...</p>
+<p>uhh, back to Azure.</p>
+<p>ASM is like?.. Well my 2009 Pathfinder. It's trusty, and gets me to and fro, but doesn't have all the latest bells and whistles (Bluetooth!!!).  ARM is like?.. I want to say a Tesla, but that may be a little much. A NEW PATHFINDER! ha that would probably have Bluetooth.</p>
+<p>ARM is where you should be focusing. Instead of crafting an ASM based URL with a POST method that looks something like:</p>
+<blockquote><p>https://management.core.windows.net//services/hostedservices//deployments</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx">ref</a></p>
+<p>With a body full of XML &lt;digital shiver /&gt;. The 90's called wanting their code back... You should instead, create an ARM PUT that looks something like:</p>
+<blockquote><p>https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?validating={true|false}&amp;api-version={api-version}</p></blockquote>
+<p><a href="https://msdn.microsoft.com/en-us/library/azure/mt163591.aspx">ref</a></p>
+<p>With a body full of Crockford approved, JSON.</p>
+<p>Now, there are plenty of tools to help you craft this JSON, so don't fret much. Check out this (shameless plug) awesome <a href="https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros">video </a>about how to use Visual Studio to do just that.</p>
+<p>Trust me, I'm a <a href="http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg">professional</a>.</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

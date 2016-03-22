@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> TripDubRoot</title>
+	<meta name="description" content="To us, and those like us...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/blog/page2/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/img/maxresdefault.jpg')">
+    Your ego is not your amigo...
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/azure/development/devops/2015/10/31/deploy-to-azure-resource-groups-using-the-sdk.html">
+            Deploy to Azure Resource Groups using the SDK
+          </a>
+        </h1>
+        <p class="meta">
+          October 31, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img src="/assets/image_8.png" alt="" width="750" height="421" /></p>
+<p>&nbsp;</p>
+<h1>Authentication</h1>
+<p>Start by adding the ADAL nuget package.</p>
+<blockquote><p><em><strong>Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory</strong></em></p></blockquote>
+<p>Then add this file to your project:</p>
+<p><script src="https://gist.github.com/devdash/8f9e65b038ef5254e1fd.js"></script>The first line of code in your app will be… </p>
+<blockquote>
+<pre><em><strong>string token = AuthHelper.GetAuthorizationHeader();
+</strong></em></pre>
+</blockquote>
+<p>That’s it for authentication!   </p>
+<p>&nbsp;</p>
+<h1>Setup the Resource Management Client</h1>
+<p>Start by adding the Azure Resource Management NuGet package. </p>
+<blockquote><p><em><strong>Install-Package Microsoft.Azure.Management.Resources</strong></em></p></blockquote>
+<p>Then drop this code into your program:<script src="https://gist.github.com/devdash/ee0687985c4ab077c304.js"></script></p>
+<p>This will give you a client to make requests and create assets using the Azure Resource Manager.</p>
+<p>&nbsp;</p>
+<h1>Create a Resource Group</h1>
+<p>Next we need to create Resource Group to deploy into. Use this code with the client you just created above.</p>
+<p><script src="https://gist.github.com/devdash/7d20b347b70fb578078e.js"></script></p>
+<h1>Create a Resource Deployment</h1>
+<p>Lastly let’s deploy an Azure Resource Template. First I committed a <a href="https://github.com/devdash/testdeployments" target="_blank">template and parameter file to GitHub</a>. They just deploy a simple website. I then create a deployment and set the deployment properties to contain the RAW link to those files. Finally I call <em><strong>CreateOrUpdateAsync</strong> </em>method an pass all the appropriate parameters. Here’s the code:<script src="https://gist.github.com/devdash/fd2c267f25cb0e20eeb8.js"></script></p>
+
+        <a class="button" href="/azure/development/devops/2015/10/31/deploy-to-azure-resource-groups-using-the-sdk.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/administration/devops/windows%20client/windows%20server/2015/10/27/shh-windows-will-support-openssh-who-is-this-microsoft.html">
+            SHH, Windows will Support OpenSSH
+          </a>
+        </h1>
+        <p class="meta">
+          October 27, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Microsoft loves Linux.</p>
+<p>Who is this Microsoft? and what did you do to telnet?.. Gopher must've ate it. Open Source for life!</p>
+<p><img class="alignnone" src="/assets/ice-cube-net-worth.jpg" alt="" width="1440" height="823" /></p>
+<p>Those fellows who work on PowerShell must be crazy! Who'd want port 22 open on a Windows box?</p>
+<p>Me.</p>
+<p>No more nc.exe bro dawg! Captn_Jack and his fellow RedHat wearing brethren can finally manage Windows and Linux over thy administrator controlled port.</p>
+<p><img class="alignnone" src="/assets/pirates-of-the-caribbean-curse-of-the-black-pearl-2003-03.png" alt="" width="500" height="281" /></p>
+<p>Supercilious really...</p>
+<p>But why is SSH coming? I mean it's only 30 years in the making...</p>
+<p>Well <a href="http://blogs.msdn.com/b/powershell/archive/2015/06/03/looking-forward-microsoft-support-for-secure-shell-ssh.aspx">here </a>is what the PowerShell Team has to say:</p>
+<blockquote><p>Finally, I'd like to share some background on today’s announcement, because this is the 3rd time the PowerShell team has attempted to support SSH.  The first attempts were during PowerShell V1 and V2 and were rejected.  <strong>Given our changes in leadership and culture, we decided to give it another try and this time, because we are able to show the clear and compelling customer value, the company is very supportive.</strong>  So I want to take a minute and thank all of you in the community who have been clearly and articulately making the case for why and how we should support SSH!</p></blockquote>
+<p>Emphasis put on the key point.</p>
+<p><a href="https://github.com/PowerShell/Win32-OpenSSH/wiki/Deploy-Win32-OpenSSH">Install it NOW!</a></p>
+<p>Trust me, I'm a <a href="http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg">professional</a>.</p>
+
+        <a class="button" href="/administration/devops/windows%20client/windows%20server/2015/10/27/shh-windows-will-support-openssh-who-is-this-microsoft.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2015/10/14/azure-logic-apps-twitter-to-blob-storage.html">
+            Azure Logic Apps: Twitter to Blob Storage
+          </a>
+        </h1>
+        <p class="meta">
+          October 14, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><iframe src="https://channel9.msdn.com/Blogs/devian/Logic-Apps-Twitter-to-Azure-Blob-Storage/player" width="512" height="384" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>In this episode I create a Logic App that uses the Twitter and Blob storage connectors.</p>
+
+        <a class="button" href="/2015/10/14/azure-logic-apps-twitter-to-blob-storage.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/administration/productivity/windows%20client/2015/10/12/windows-10-showhide-icons-in-the-notification-area.html">
+            Windows 10 - Show/Hide Icons in the Notification Area
+          </a>
+        </h1>
+        <p class="meta">
+          October 12, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img class="alignnone" src="/assets/DyRvw.gif?c=desktop&amp;p=popkey&amp;i=mrw-reactions&amp;l=featured&amp;f=.gif" alt="Erkle" width="290" height="172" /></p>
+<p>Why is this hard? All I want to do is decide what icons are shown and what icons are hidden in the notification area of Windows 10... Let the red arrow show you where I mean.</p>
+<p><a href="http://devian.co/wp-content/uploads/2015/10/tbarsmall.png"><img class="alignnone size-full wp-image-2049" src="/assets/tbarsmall.png" alt="tbarsmall" width="774" height="39" /></a></p>
+<p>Soo..... How do you do it?</p>
+<ol>
+<li>Hit the "Windows" key.</li>
+<li>Type: Notification</li>
+<li>Select: Notifications and action settings</li>
+<li>Choose: Select which icons appear on the taskbar</li>
+<li>Flip the slider on what you want shown or hidden</li>
+</ol>
+<p><a href="http://devian.co/wp-content/uploads/2015/10/notification.gif"><img class="alignnone size-full wp-image-2050" src="/assets/notification.gif" alt="notification" width="600" height="337" /></a></p>
+<p>That's it! awesome...</p>
+<p><img class="alignnone" src="/assets/QLOMV.gif?c=desktop&amp;p=popkey&amp;i=mrw-reactions&amp;l=featured&amp;f=.gif" alt="" width="620" height="349" /></p>
+
+        <a class="button" href="/administration/productivity/windows%20client/2015/10/12/windows-10-showhide-icons-in-the-notification-area.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/wams/2015/10/05/youtubes-live-streaming-and-the-time-it-just-stole-from-me.html">
+            YouTube's Live Streaming, and the Time it Just Stole from Me!
+          </a>
+        </h1>
+        <p class="meta">
+          October 5, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p><img class="aligncenter" src="/assets/offlinevid.gif" alt="Offline Video GIF" width="636" height="356" /></p>
+<p>I haven't posted in a while. Shame shame shame... Today I am writing to you about YouTube's live streaming service. I was checking out the <a href="https://live.asp.net/">Asp.Net weekly stand-up</a> and noticed, it's what they use. I went off to investigate and realized it's really simple to setup.</p>
+<p>Navigate off to <a href="https://www.youtube.com/live_dashboard">https://www.youtube.com/live_dashboard</a> and agree to the terms. You'll notice then that there is a "Stream Now" link. Click that...</p>
+<p>Off on the right conveniently located near the video player is a checklist. This checklist walks you through setting up an encoder and hooking it up to YouTube.</p>
+<p>I went with Wirecast, because I have a copy. I'd recommend downloading <a href="http://www.telestream.net/wirecastplay/landing.htm">Wirecast Play</a> free. It's a pretty awesome tool and will authenticate with your YouTube account. Then click stream...</p>
+<p>As a person with close ties and invested interest in <a href="https://azure.microsoft.com/en-us/services/media-services/">Azure Media Services</a>, we need something this easy, this free, and this without the need for an <a href="https://go.microsoft.com/fwlink/p/?LinkID=510935&amp;culture=en-US&amp;country=US">Office365 subscription</a>.</p>
+<p>Maybe I'll setup a reoccurring live stream for us folks in the ATL... hmmm.</p>
+
+        <a class="button" href="/wams/2015/10/05/youtubes-live-streaming-and-the-time-it-just-stole-from-me.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      Prev
+    </a>
+    
+    
+    <a href="/blog/page3" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

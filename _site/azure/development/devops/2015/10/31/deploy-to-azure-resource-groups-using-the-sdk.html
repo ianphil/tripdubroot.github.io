@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Deploy to Azure Resource Groups using the SDK | TripDubRoot</title>
+	<meta name="description" content="&nbsp;AuthenticationStart by adding the ADAL nuget package.Install-Package Microsoft.IdentityModel.Clients.ActiveDirectoryThen add this file to your project:...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/development/devops/2015/10/31/deploy-to-azure-resource-groups-using-the-sdk.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Deploy to Azure Resource Groups using the SDK</h1>
+    <p class="meta">
+    October 31, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><img src="/assets/image_8.png" alt="" width="750" height="421" /></p>
+<p>&nbsp;</p>
+<h1>Authentication</h1>
+<p>Start by adding the ADAL nuget package.</p>
+<blockquote><p><em><strong>Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory</strong></em></p></blockquote>
+<p>Then add this file to your project:</p>
+<p><script src="https://gist.github.com/devdash/8f9e65b038ef5254e1fd.js"></script>The first line of code in your app will be… </p>
+<blockquote>
+<pre><em><strong>string token = AuthHelper.GetAuthorizationHeader();
+</strong></em></pre>
+</blockquote>
+<p>That’s it for authentication!   </p>
+<p>&nbsp;</p>
+<h1>Setup the Resource Management Client</h1>
+<p>Start by adding the Azure Resource Management NuGet package. </p>
+<blockquote><p><em><strong>Install-Package Microsoft.Azure.Management.Resources</strong></em></p></blockquote>
+<p>Then drop this code into your program:<script src="https://gist.github.com/devdash/ee0687985c4ab077c304.js"></script></p>
+<p>This will give you a client to make requests and create assets using the Azure Resource Manager.</p>
+<p>&nbsp;</p>
+<h1>Create a Resource Group</h1>
+<p>Next we need to create Resource Group to deploy into. Use this code with the client you just created above.</p>
+<p><script src="https://gist.github.com/devdash/7d20b347b70fb578078e.js"></script></p>
+<h1>Create a Resource Deployment</h1>
+<p>Lastly let’s deploy an Azure Resource Template. First I committed a <a href="https://github.com/devdash/testdeployments" target="_blank">template and parameter file to GitHub</a>. They just deploy a simple website. I then create a deployment and set the deployment properties to contain the RAW link to those files. Finally I call <em><strong>CreateOrUpdateAsync</strong> </em>method an pass all the appropriate parameters. Here’s the code:<script src="https://gist.github.com/devdash/fd2c267f25cb0e20eeb8.js"></script></p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

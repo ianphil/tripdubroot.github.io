@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Troubleshooting Azure Resource Manager Failed Messages | TripDubRoot</title>
+	<meta name="description" content="So you're in the new portal and trying to deploy something? It runs for a while and then fails! The message returned isn't great and looks something like:The...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/azure/powershell/2015/05/29/troubleshooting-azure-resource-manager-failed-messages.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Troubleshooting Azure Resource Manager Failed Messages</h1>
+    <p class="meta">
+    May 29, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><a href="http://devian.co/wp-content/uploads/2015/05/brokenComp.jpg"><img class="alignnone size-medium wp-image-1191" src="/assets/brokenComp-300x218.jpg" alt="brokenComp" width="300" height="218" /></a></p>
+<p>So you're in the new portal and trying to deploy something? It runs for a while and then fails! The message returned isn't great and looks something like:</p>
+<blockquote><p>The operation name is: Microsoft.ClassicCompute/virtualMachines/extensions/write The status is: Failed</p></blockquote>
+<p>Well, it happens... A good way to start to troubleshoot that is using PowerShell. <a href="http://ianp.co/1PSAclL" target="_blank">Go setup PowerShell</a> if you haven't already. Then use the command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt;</pre>
+<p>This will return all the log entries from the last deployment. It should provide you a window into what is actually happening. Last I used this was deploying an Azure SQL database. The error I received was lacking detail, but after I ran that command I was able to see that East US was running hot and I need to provision in a different Datacenter...</p>
+<p>There are other variations of that command as well. If you want a specific deployment that you've run for a resource group you would use this command:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -DeploymentName &lt;DeploymentName&gt;</pre>
+<p>If you want all the logs for a resource group you would run:</p>
+<pre>Get-AzureResourceGroupLog -Name &lt;ResourceGroupName&gt; -All</pre>
+<p>Hope this helps you figure out what's happening with a Resource Manager based deployment goes wrong!</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

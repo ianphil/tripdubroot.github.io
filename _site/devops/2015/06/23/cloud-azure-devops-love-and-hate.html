@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Cloud, Azure, DevOps, Love and Hate | TripDubRoot</title>
+	<meta name="description" content="Early in 2007 or 2008, the one and only, DigUnix got back from an overnight hack-a-thon. During this thon he was introduced to running Linux boxes in Amazon'...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/devops/2015/06/23/cloud-azure-devops-love-and-hate.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Cloud, Azure, DevOps, Love and Hate</h1>
+    <p class="meta">
+    June 23, 2015
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><img src="/assets/062315_2219_CloudAzureD1.png" alt="" /></p>
+<p>Early in 2007 or 2008, the one and only, DigUnix got back from an overnight hack-a-thon. During this thon he was introduced to running Linux boxes in Amazon's datacenters. Till then, he and I used to just remotely build Gentoo boxes from across the hall and get in trouble for scream profanity in the office. Hey we worked with Linux… it's what you do. This is when I was introduced to AWS and my love for the "cloud" was born. Of Couse this is before we called it the cloud.</p>
+<p>Later in 2011 I was on my way to one of the Atlanta PFE team meetings we hold at the Alpharetta Office once a month. I'd carpooled that day with another PFE, because we recently discovered that we lived close to one another. What I didn't know was this man would change my life for the foreseeable future. During this car ride he started telling me about this thing called Windows Azure… I promptly forced him to immediately create me an account when we got to the office. A year later I was giving talks about automated deployments to Azure, but I get a head of myself.</p>
+<p>This was a time when the Silverlight portal was all the hotness and our biggest selling point. Yea, so we've come a long way and that's all I have to say about that. These are the days before IaaS or Azure AD. We used ACS to authenticate cloud apps and life was setup hell. Still it laid a framework for building great things. I've worked for, and with, many of the Azure Product Groups over the years. I've had source code access to Reddog, and helped build telemetry systems customers use for their feedback loops. It's been a great and busy ride. Through it all I kept saying that I was going to put up some good content and share some of my learning here, but alas I never got beyond small tidbits of things I wanted to remember… till now.</p>
+<p>I will start with DevOps.</p>
+<p>I'm not a fanatic, this is the only way to solve world hunger, DevOps practitioner. I've worked with cloud providers, ISVs, Partners, and IT shops alike exploring this world. I've seen some of what works and some of what doesn't. I was skeptical about the whole culture thing, and transformed into a believer. I have a skewed view toward .Net Apps and Azure. You've been warned!</p>
+<p>Let's start with life cycle, and this will set the stage for the rest of what I plan on talking about.</p>
+<ul>
+<li>Develop</li>
+<li>Build</li>
+<li>Test</li>
+<li>Deploy</li>
+<li>Configure</li>
+<li>Monitor</li>
+</ul>
+<p>This is where my framework will start. I'm going to talk about each item listed above in hopefully one post each. I plan on sharing not only tools and practices I've found that work, but also some of the cultural hurtles I've seen. I'm creating a repo that will house demos and other goodies needed to make this work. It should be a complete deployment of some sort of app/system that demonstrates most if not all the aspects needed to be successful using the Microsoft Stack in Azure. Beyond that… I don't really care. Deal with it.</p>
+<p>Automation is king. I've made the joke with my customers over the years, automate everything so you can pretend to work and play video games. It's not a joke. Let's get started…</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

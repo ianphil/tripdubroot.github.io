@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Windows Azure, Remote PowerShell and the Case of the Unknown Certificate Authority | TripDubRoot</title>
+	<meta name="description" content="Recently the folks over on the Azure team released a bunch of improvements to Azure. One of them caught my eye. They’ve provided us a way to enable PowerShel...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://tripdubroot.com/administration/azure/devops/powershell/windows%20server/2013/04/30/windows-azure-remote-powershell-and-the-case-of-the-unknown-certificate-authority.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="TripDubRoot" href="http://tripdubroot.com/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">TripDubRoot</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/tripdubroot" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/416192/tripdubroot" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/tripdubroot" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Windows Azure, Remote PowerShell and the Case of the Unknown Certificate Authority</h1>
+    <p class="meta">
+    April 30, 2013
+     - {"login"=>"adminian", "email"=>"ian.philpot@microsoft.com", "display_name"=>"adminian", "first_name"=>"", "last_name"=>""}
+    </p>
+  </header>
+  <section class="post-content"><p><a href="http://adminian.files.wordpress.com/2013/04/image_494c640a1.png"><img style="display:inline;border-width:0;" title="image_494C640A[1]" alt="image_494C640A[1]" src="/assets/image_494c640a1_thumb.png" width="622" height="447" border="0" /></a></p>
+<p>Recently the folks over on the Azure team released a bunch of improvements to Azure. One of them caught my eye. They’ve provided us a way to enable PowerShell remoting when provisioning a machine. As someone who tries to automate all things I was extremely happy to see this. Gone are the days or creating images with startup scripts set, but there is a problem…</p>
+<p>After you provision a machine with the above check box checked. You’ll probably try something like this…</p>
+<p><script src="https://gist.github.com/devdash/bc3829b74941f405a802.js"></script></p>
+<p>And then you’ll see the following exception:</p>
+<blockquote><p>Enter-PSSession : Connecting to remote server psremoter.cloudapp.net failed with the following error message : The server certificate on the destination computer<br />
+(psremoter.cloudapp.net:5074) has the following errors:<br />
+The SSL certificate is signed by an unknown certificate authority. For more information, see the about_Remote_Troubleshooting Help topic.<br />
+At line:11 char:1<br />
++ Enter-PSSession -ComputerName psremoter.cloudapp.net -Port 5074 -Credential $cre ...<br />
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
++ CategoryInfo          : InvalidArgument: (psremoter.cloudapp.net:String) [Enter-PSSession], PSRemotingTransportException<br />
++ FullyQualifiedErrorId : CreateRemoteRunspaceFailed</p></blockquote>
+<p>Let’s take a step back and look at what I’m talking about. When you enable this feature, PSRemoting is configured for SSL and uses a self signed certificate. This certificate needs to be added to your root certificate store so that you can access the machine. Let’s do this…</p>
+<p><script src="https://gist.github.com/devdash/eae238a59988f1bf873e.js"></script></p>
+<p>This script creates a ServicePoint to get the certificate. Then adds it to your trusted store. Now your free to “Enter-PSSesion” or “Invoke-Command” all you’d like!</p>
+</section>
+</article>
+
+<!-- Post navigation -->
+
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'tripdubroot';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
