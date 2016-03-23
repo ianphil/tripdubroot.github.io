@@ -7,7 +7,7 @@ theme:
   # Meta
   title: TripDubRoot
   avatar: avatar.png
-  gravatar: # Email MD5 hash
+  gravatar: a5d847a4757fc634f1341021656f484c
   description: "To us, and those like us..." # used by search engines
 
   # Header and footer text
@@ -40,7 +40,7 @@ theme:
   youtube:
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-75489636-1"
   disqus_shortname: "tripdubroot"
   katex: true # Enable if using math markup
 
