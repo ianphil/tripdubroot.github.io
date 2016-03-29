@@ -35,6 +35,16 @@
 
 	<!-- Google Analytics -->
 	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-75489636-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
 </head>
 
   <body>
@@ -42,7 +52,7 @@
 	<div class="branding">
 		
 		<a href="/">
-			<img class="avatar" src="/img/avatar.png" alt=""/>
+			<img class="avatar" src="https://secure.gravatar.com/avatar/a5d847a4757fc634f1341021656f484c?s=100" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
@@ -84,8 +94,16 @@
 			
 			
 			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled -->
 			
+<li>
+	<a href="http://tripdubroot.com/feed.xml" title="Follow RSS feed">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
 
 
 
@@ -158,6 +176,27 @@
   
 
   <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2016/03/28/live-capture-memories-holoportation.html">
+            Live Capture Memories with Holoportaion
+          </a>
+        </h1>
+        <p class="meta">
+          March 28, 2016
+        </p>
+      </header>
+      <div class="excerpt">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7d59O6cfaM0" frameborder="0" allowfullscreen=""></iframe>
+
+
+        <a class="button" href="/2016/03/28/live-capture-memories-holoportation.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
     
     <div class="post-teaser">
       <header>
@@ -548,42 +587,6 @@
 </table>
 
         <a class="button" href="/community/development/productivity/2015/11/14/tech404-atlantas-slack-community.html">
-          Continue reading
-        </a>
-      </div>
-    </div>
-    
-    <div class="post-teaser">
-      <header>
-        <h1>
-          <a class="post-link" href="/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html">
-            The Azure Rest API, or Rather Resource Management API
-          </a>
-        </h1>
-        <p class="meta">
-          November 3, 2015
-        </p>
-      </header>
-      <div class="excerpt">
-        <p>Let's start with a simple bingle search. Head over to <a href="https://duckduckgo.com/">duckduckgo.com</a> and type in "Azure REST API" and hit quack...</p>
-<p><img class="alignnone" src="/assets/search.png" alt="" width="781" height="427" /></p>
-<p>The top hit is already leading you astray! It takes us to the Azure Service Management API (ASM). "Ian, why is that not right?", you ask? Well to be fair it's not wrong... but wait we want Azure Resource Manager (ARM). It's the latest hotness.</p>
-<p>Let me take a step back here to say, I fall off of mountain bikes regularly, it's my excuse.</p>
-<p><img class="alignnone" src="/assets/scott-scale-29er-2010-mountain-bike.jpg" alt="" width="600" height="356" /></p>
-<p>Dear Katniss Everdeen...</p>
-<p>uhh, back to Azure.</p>
-<p>ASM is like?.. Well my 2009 Pathfinder. It's trusty, and gets me to and fro, but doesn't have all the latest bells and whistles (Bluetooth!!!).  ARM is like?.. I want to say a Tesla, but that may be a little much. A NEW PATHFINDER! ha that would probably have Bluetooth.</p>
-<p>ARM is where you should be focusing. Instead of crafting an ASM based URL with a POST method that looks something like:</p>
-<blockquote><p>https://management.core.windows.net//services/hostedservices//deployments</p></blockquote>
-<p><a href="https://msdn.microsoft.com/en-us/library/azure/jj157194.aspx">ref</a></p>
-<p>With a body full of XML &lt;digital shiver /&gt;. The 90's called wanting their code back... You should instead, create an ARM PUT that looks something like:</p>
-<blockquote><p>https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?validating={true|false}&amp;api-version={api-version}</p></blockquote>
-<p><a href="https://msdn.microsoft.com/en-us/library/azure/mt163591.aspx">ref</a></p>
-<p>With a body full of Crockford approved, JSON.</p>
-<p>Now, there are plenty of tools to help you craft this JSON, so don't fret much. Check out this (shameless plug) awesome <a href="https://channel9.msdn.com/Blogs/raw-tech/Deploying-Virtual-Machine-via-Azure-Resource-Templates-with-Visual-Studio-for-IT-Pros">video </a>about how to use Visual Studio to do just that.</p>
-<p>Trust me, I'm a <a href="http://img06.deviantart.net/94a7/i/2013/119/6/2/leon_the_professional_by_andreevsky-d63ittv.jpg">professional</a>.</p>
-
-        <a class="button" href="/azure/2015/11/03/the-azure-rest-api-or-rather-resource-management-api.html">
           Continue reading
         </a>
       </div>

@@ -35,6 +35,16 @@
 
 	<!-- Google Analytics -->
 	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-75489636-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
 </head>
 
   <body>
@@ -42,7 +52,7 @@
 	<div class="branding">
 		
 		<a href="/">
-			<img class="avatar" src="/img/avatar.png" alt=""/>
+			<img class="avatar" src="https://secure.gravatar.com/avatar/a5d847a4757fc634f1341021656f484c?s=100" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
@@ -84,8 +94,16 @@
 			
 			
 			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled -->
 			
+<li>
+	<a href="http://tripdubroot.com/feed.xml" title="Follow RSS feed">
+		<i class="fa fa-fw fa-rss"></i>
+	</a>
+</li>
+
 
 
 
@@ -158,6 +176,27 @@
   
 
   <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2015/02/20/post-to-yammer-from-azure-automation.html">
+            Post to Yammer from Azure Automation
+          </a>
+        </h1>
+        <p class="meta">
+          February 20, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>This little diddy pulls down the Azure Updates RSS feed, get's the last days posts (if there are any) and posts them to Yammer using email... Something to keep folks in our Yammer group informed.</p>
+<p><script src="https://gist.github.com/devdash/ae7a06f5e84c79949405.js"></script></p>
+
+        <a class="button" href="/2015/02/20/post-to-yammer-from-azure-automation.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
     
     <div class="post-teaser">
       <header>
@@ -307,29 +346,6 @@ param([string]$TenantName = (Read-Host &quot;What is your tenant name? (example.
 <p>Once that is complete you can download your logs at: <a href="https://&lt;YourSiteName&gt;.scm.azurewebsites.net/Zip/data/DaaS">https://<b>&lt;YourSiteName&gt;.</b>scm.azurewebsites.net<b>/Zip/</b>data/<b>DaaS</b></a>. </p>
 
         <a class="button" href="/administration/azure/development/devops/2014/12/02/azure-web-sites-daasdiagnostics-as-a-service.html">
-          Continue reading
-        </a>
-      </div>
-    </div>
-    
-    <div class="post-teaser">
-      <header>
-        <h1>
-          <a class="post-link" href="/azure/devops/powershell/2014/11/18/new-video-save-time-and-money-with-azure-automation.html">
-            New Video: Save Time and Money with Azure Automation
-          </a>
-        </h1>
-        <p class="meta">
-          November 18, 2014
-        </p>
-      </header>
-      <div class="excerpt">
-        <p><a href="http://adminian.com/wp-content/uploads/2014/11/save-time.png"><img title="save-time" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="save-time" src="/assets/save-time_thumb.png" width="240" height="214" /></a></p>
-<p>We’ve all seen compute power sitting idle, costing us money... Well no more! Automate the creation, deployment, monitoring, and maintenance of resources in your Microsoft Azure environment using a highly scalable and reliable workflow execution engine.</p>
-<p><iframe height="315" src="//www.youtube.com/embed/A-F6mJZ1fWg" frameborder="0" width="560" allowfullscreen></iframe>
-<p>Demo files at: <a href="http://aka.ms/githubautomation">http://aka.ms/githubautomation</a></p>
-
-        <a class="button" href="/azure/devops/powershell/2014/11/18/new-video-save-time-and-money-with-azure-automation.html">
           Continue reading
         </a>
       </div>
