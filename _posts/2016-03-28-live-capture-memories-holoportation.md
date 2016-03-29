@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Live Capture Memories with Holoportaion
+title: Live Capture Memories with Holoportation
 date: 2016-03-28 21:13:00 -0500
 published: true
 tags: HoloLens, Awesome, Crazy Cool
