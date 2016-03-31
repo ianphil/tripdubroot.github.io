@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Building Developer Environments in Azure: Finding VM Images
-date: 2016-03-31 14:00:00 -0500
+title: Building Developer Environments in Azure, Finding VM Images
+date: 2016-03-31 15:00:00 -0500
 published: true
 tags: Azure, Awesome, Crazy Cool
 ---
