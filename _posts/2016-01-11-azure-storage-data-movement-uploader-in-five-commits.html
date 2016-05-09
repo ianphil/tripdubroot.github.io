@@ -32,7 +32,7 @@ tags:
 <p>Enough of the Git horse play, let us look at the code! The “Initial Commit” is nothing more than GitHub creating the repo, so we’ll skip over that and only four commits left. Starting with the master branch I simply added the project with a bit of bits already laid down. This code will <strong>take a ZIP file</strong> found in the project and <strong>upload it to blob storage</strong>. We will use the app.config file and drop the connection string in, hit F5 and it uploads the file. It then pauses and waits for you to verify everything has worked as expected. If it has you can the hit any key and it will clean up all the changes it just made to you storage account and close. Simple.</p>
 <h1>The Code that Does the Dang Thing</h1>
 <p>From the <strong>Master</strong> Branch:</p>
-<p>[code lang="csharp"]</p>
+{% highlight csharp %}
 <p>private static async Task BlobUploadTest()<br />
         {<br />
             string sourceFilename = &quot;Downloads.zip&quot;;<br />
@@ -50,7 +50,7 @@ tags:
             }</p>
 <p>            Console.WriteLine(&quot;File {0} is uploaded to {1} successfully.&quot;, sourceFilename, destinationBlob.Uri.ToString());<br />
         }</p>
-<p>[/code]</p>
+{% endhighlight %}
 <p>This code first calls the <em>GetCloudBlob</em> method that uses the standard <a href="http://ianp.co/1VZOMr5">Azure Storage SDK</a> to create a container in your storage account. I’m not going to go into detail about that. The next part we just set the content type for file we are uploading. These are just standard <a href="http://ianp.co/1W05y9y">MIME types</a>. Finally, we move on to the actual upload. Here we use the aptly named static method <em>UploadAsync </em>that is hung off the class <em>TransferManager</em>. It takes three parameters: Source File, Destination Blob, Options, and Transfer context. The Transfer context for now is null. It does what you think, uploads a file to blob storage. Press F5 to run this bit of code, it does do much but before you press any key, which deletes everything we just did from Azure, have a look at the blobs in your storage account, do you see a new container? A new file? It took me <strong>15784 milliseconds</strong> to upload the file…</p>
 <h1>But I want Progress Tracking</h1>
 <p>From the <strong>ProgressManager</strong> Branch:</p>
