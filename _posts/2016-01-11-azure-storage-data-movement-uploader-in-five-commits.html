@@ -33,9 +33,9 @@ tags:
 <h1>The Code that Does the Dang Thing</h1>
 <p>From the <strong>Master</strong> Branch:</p>
 {% highlight csharp %}
-<p>private static async Task BlobUploadTest()<br />
-        {<br />
-            string sourceFilename = &quot;Downloads.zip&quot;;<br />
+private static async Task BlobUploadTest()
+        {
+            string sourceFilename = "Downloads.zip";
             string destinationFilename = &quot;Downloads_blockblob.zip&quot;;</p>
 <p>            CloudBlob destinationBlob = GetCloudBlob(ContainerName, destinationFilename, BlobType.BlockBlob);<br />
             UploadOptions options = new UploadOptions();<br />
