@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/tripdubroot
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://tripdubroot.com
+  * I am tripdubroot (https://keybase.io/tripdubroot) on keybase.
+  * I have a public key ASBS-nsFldmA6xmsHiwG1qFmnOW48BBVuD_5nhj4RSP5hgo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012012d596091c069dad886956afa80cda5d914e4440d6196afec3f31ce2d1c49b150a",
+            "host": "keybase.io",
+            "kid": "012052fa7b0595d980eb19ac1e2c06d6a1669ce5b8f01055b83ff99e18f84523f9860a",
+            "uid": "51328e2f3715367240787089688cef19",
+            "username": "tripdubroot"
+        },
+        "service": {
+            "hostname": "tripdubroot.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.16"
+    },
+    "ctime": 1467311844,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1467311476,
+        "hash": "f7e32ee6c1ea38bafe51e55e58ed29bda1335216b1714ec57c1cd599e84e60adbb9d13a6ce44322a2bffda71d290118f1d1d83fd160bf9b95751816584fa10ae",
+        "seqno": 504782
+    },
+    "prev": "80a57fbe2074797585c3002dc5473c725ad13481237f261cc73d19388247e431",
+    "seqno": 20,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgUvp7BZXZgOsZrB4sBtahZpzluPAQVbg/+Z4Y+EUj+YYKp3BheWxvYWTFAvp7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMTJkNTk2MDkxYzA2OWRhZDg4Njk1NmFmYTgwY2RhNWQ5MTRlNDQ0MGQ2MTk2YWZlYzNmMzFjZTJkMWM0OWIxNTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNTJmYTdiMDU5NWQ5ODBlYjE5YWMxZTJjMDZkNmExNjY5Y2U1YjhmMDEwNTViODNmZjk5ZTE4Zjg0NTIzZjk4NjBhIiwidWlkIjoiNTEzMjhlMmYzNzE1MzY3MjQwNzg3MDg5Njg4Y2VmMTkiLCJ1c2VybmFtZSI6InRyaXBkdWJyb290In0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ0cmlwZHVicm9vdC5jb20iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE2In0sImN0aW1lIjoxNDY3MzExODQ0LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NjczMTE0NzYsImhhc2giOiJmN2UzMmVlNmMxZWEzOGJhZmU1MWU1NWU1OGVkMjliZGExMzM1MjE2YjE3MTRlYzU3YzFjZDU5OWU4NGU2MGFkYmI5ZDEzYTZjZTQ0MzIyYTJiZmZkYTcxZDI5MDExOGYxZDFkODNmZDE2MGJmOWI5NTc1MTgxNjU4NGZhMTBhZSIsInNlcW5vIjo1MDQ3ODJ9LCJwcmV2IjoiODBhNTdmYmUyMDc0Nzk3NTg1YzMwMDJkYzU0NzNjNzI1YWQxMzQ4MTIzN2YyNjFjYzczZDE5Mzg4MjQ3ZTQzMSIsInNlcW5vIjoyMCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDYXk7yPuQH8V3dBN+NLRpKnSNSHHAart1xIi9hBejTgTEQA4YtGxHljAkPQg43PBYwacooWfwojrcGzqEMGj4FqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgKULfuudMiwlXL6PzKKl2Dlr/zciiIgd4vexfoHrQdymjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tripdubroot
+
+==================================================================
